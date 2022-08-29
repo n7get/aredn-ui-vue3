@@ -1,0 +1,17 @@
+[
+  {
+    "cnxtype": "RF",
+    "hostname": "N7GET-hAP-Tunnel-172",
+    "ip": "10.63.69.172"
+  },
+  {
+    "cnxtype": "LAN",
+    "hostname": "N7GET-rpi-2",
+    "ip": "10.244.90.206"
+  },
+  {
+    "cnxtype": "LAN",
+    "hostname": "N7GET-Grandstream",
+    "ip": "10.244.90.205"
+  }
+]

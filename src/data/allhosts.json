@@ -1,0 +1,446 @@
+[
+  {
+    "name": "N7GET-hAP-Tunnel-172",
+    "ip": "10.63.69.172"
+  },
+  {
+    "name": "N7GET-rpi-2",
+    "ip": "10.244.90.206"
+  },
+  {
+    "name": "N7GET-Grandstream",
+    "ip": "10.244.90.205"
+  },
+  {
+    "name": "W5SAT-5-GL-INET-AR300M16-24-226-240",
+    "ip": "10.24.226.240"
+  },
+  {
+    "name": "N6YKE-CSI-5G21-90-Sector",
+    "ip": "10.162.196.202"
+  },
+  {
+    "name": "WA6MZW-M5XM-Omni-4",
+    "ip": "10.154.71.185"
+  },
+  {
+    "name": "N7HWM-CPE210",
+    "ip": "10.188.51.160"
+  },
+  {
+    "name": "KA2BLQ-hAP-83",
+    "ip": "10.37.64.83"
+  },
+  {
+    "name": "KE6BXT-LVQTH-AR-138",
+    "ip": "10.64.98.138"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-M5RDish-to-Red-Mtn",
+    "ip": "10.72.155.171"
+  },
+  {
+    "name": "KE6BXT-hAP-217-RaspberryPi",
+    "ip": "10.62.154.132"
+  },
+  {
+    "name": "KE6BXT-hAP-MAP-217",
+    "ip": "10.161.244.212"
+  },
+  {
+    "name": "KF7QQN-QTH-UBNTCamera",
+    "ip": "10.122.218.142"
+  },
+  {
+    "name": "KF7QQN-hAP-Tunnel-81",
+    "ip": "10.15.91.81"
+  },
+  {
+    "name": "N7ZEV-KB7HTA-APEX-RM5S60",
+    "ip": "10.110.169.123"
+  },
+  {
+    "name": "kb7hta-teamtalk",
+    "ip": "10.85.217.226"
+  },
+  {
+    "name": "KB7HTA-1",
+    "ip": "10.85.217.227"
+  },
+  {
+    "name": "LVMeshServer",
+    "ip": "10.85.217.230"
+  },
+  {
+    "name": "KB7HTA-LVMESH-RM5D30-LO",
+    "ip": "10.106.187.60"
+  },
+  {
+    "name": "N7HWM-M5R-OMNI-VoIP",
+    "ip": "10.90.80.158"
+  },
+  {
+    "name": "KE6BXT-LVQTH-hAP-Tunnel22-IPPhone",
+    "ip": "10.16.98.249"
+  },
+  {
+    "name": "KE6BXT-LVQTH-hAP-Tunnel-22-raspberrypi",
+    "ip": "10.16.98.226"
+  },
+  {
+    "name": "NO7E-hAP-Tunnel-91",
+    "ip": "10.54.237.92"
+  },
+  {
+    "name": "K7STI-MikroTIK-5HPXL-SWLV-APEX",
+    "ip": "10.198.3.67"
+  },
+  {
+    "name": "KE6BXT-LVQTH-M5NS-XW-South-74-147-33",
+    "ip": "10.74.147.33"
+  },
+  {
+    "name": "KB7HTA-LVMESH-RM2D24-Beaconhill",
+    "ip": "10.12.46.208"
+  },
+  {
+    "name": "WA6MZW-Hap5-Tunnel8",
+    "ip": "10.155.207.196"
+  },
+  {
+    "name": "KE6BXT-LVQTH-M2NS-South-160-24-191",
+    "ip": "10.160.24.191"
+  },
+  {
+    "name": "kiwisdr",
+    "ip": "10.181.73.51"
+  },
+  {
+    "name": "K7THB-NanoBridgeM5-one",
+    "ip": "10.54.169.38"
+  },
+  {
+    "name": "W7HEN-LVMESH-RM5S90-APEX1",
+    "ip": "10.100.151.72"
+  },
+  {
+    "name": "KF7PSM-MKTK5HP",
+    "ip": "10.185.74.57"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-M5R-OMNI-252-213-192",
+    "ip": "10.252.213.192"
+  },
+  {
+    "name": "k7sti-raspi",
+    "ip": "10.239.246.141"
+  },
+  {
+    "name": "k7sti-android",
+    "ip": "10.239.246.131"
+  },
+  {
+    "name": "k7sti-pc-wifi",
+    "ip": "10.239.246.136"
+  },
+  {
+    "name": "k7sti-voip",
+    "ip": "10.239.246.135"
+  },
+  {
+    "name": "k7sti-iphone",
+    "ip": "10.239.246.133"
+  },
+  {
+    "name": "K7STI-MikroTIK-HAP-Server",
+    "ip": "10.142.255.104"
+  },
+  {
+    "name": "W7DGU-hAP159-RaspberryDon",
+    "ip": "10.15.5.2"
+  },
+  {
+    "name": "W7DGU-hAP-193-224-159",
+    "ip": "10.193.224.160"
+  },
+  {
+    "name": "N7ZEV-treetopcamera",
+    "ip": "10.68.43.154"
+  },
+  {
+    "name": "N7ZEV-ToughSwitch",
+    "ip": "10.68.43.147"
+  },
+  {
+    "name": "N7ZEV-HDMI-Port",
+    "ip": "10.68.43.146"
+  },
+  {
+    "name": "N7ZEV-184-Grandstream",
+    "ip": "10.68.43.149"
+  },
+  {
+    "name": "KE6BXT-SRicam-184",
+    "ip": "10.68.43.150"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-hAP-184",
+    "ip": "10.84.66.185"
+  },
+  {
+    "name": "W5SAT-2-MikroTik-LHG-HP5-XL-173-136-102",
+    "ip": "10.173.136.102"
+  },
+  {
+    "name": "KB7HTA-VoIPTelephone",
+    "ip": "10.114.251.100"
+  },
+  {
+    "name": "KB7HTA-LVMESH-NM2--N0",
+    "ip": "10.110.95.108"
+  },
+  {
+    "name": "KE6BXT-LVQTH-M5R-Omni-241",
+    "ip": "10.6.163.241"
+  },
+  {
+    "name": "KE6BXT-GigapartsLV-IPphone",
+    "ip": "10.77.71.210"
+  },
+  {
+    "name": "KE6BXT-GigapartsLV-250",
+    "ip": "10.41.168.250"
+  },
+  {
+    "name": "N7GET-M2-1",
+    "ip": "10.148.63.176"
+  },
+  {
+    "name": "W5SAT-1-MikroTik-LHG-HP5-86-68-38",
+    "ip": "10.86.68.38"
+  },
+  {
+    "name": "KI7AQO-hAP-Tunnel-45",
+    "ip": "10.41.158.45"
+  },
+  {
+    "name": "KI7BJV-LVMESH-RBLHG5ND",
+    "ip": "10.217.115.58"
+  },
+  {
+    "name": "Apex-PTZ-camera",
+    "ip": "10.85.121.237"
+  },
+  {
+    "name": "KB7HTA-LVMESH-RM5D30-APEX0",
+    "ip": "10.170.175.61"
+  },
+  {
+    "name": "KF7PSM-INT1",
+    "ip": "10.6.182.205"
+  },
+  {
+    "name": "N6SFX-LVMESH-LGHXLHP5-N3",
+    "ip": "10.198.0.215"
+  },
+  {
+    "name": "KG7SS-LHGXLHP5-85-194-139",
+    "ip": "10.85.194.139"
+  },
+  {
+    "name": "N6SFX-K7FYI-LVMESH-RM5S90-REDMTN-LV",
+    "ip": "10.102.188.55"
+  },
+  {
+    "name": "SCFC5A6E",
+    "ip": "10.53.248.85"
+  },
+  {
+    "name": "N6SFX-K7FYI-LVMESH-RM5D30-REDMTN",
+    "ip": "10.102.191.10"
+  },
+  {
+    "name": "N6SFX-KB7HTA-LVMESH-M5S90-REDMTN-BC",
+    "ip": "10.166.86.83"
+  },
+  {
+    "name": "K7FYI-TPL210",
+    "ip": "10.58.32.120"
+  },
+  {
+    "name": "SCDAEB1E",
+    "ip": "10.246.50.188"
+  },
+  {
+    "name": "SCD7164A",
+    "ip": "10.246.50.187"
+  },
+  {
+    "name": "KB7HTA-LVMESH-RM5S90-APEX2",
+    "ip": "10.62.198.87"
+  },
+  {
+    "name": "N6YKE-CPE210",
+    "ip": "10.188.44.56"
+  },
+  {
+    "name": "PotosiTouchswitch",
+    "ip": "10.230.192.92"
+  },
+  {
+    "name": "PotosiAirCamDoor",
+    "ip": "10.230.192.90"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-Potosi-M5R-252-216-11",
+    "ip": "10.252.216.11"
+  },
+  {
+    "name": "N7HWM-hAP-Tunnel-84",
+    "ip": "10.54.237.85"
+  },
+  {
+    "name": "KE6BXT-hAP-NightlyBuildTesting-250-124-62",
+    "ip": "10.250.124.63"
+  },
+  {
+    "name": "KF7PSM-NW1",
+    "ip": "10.136.176.105"
+  },
+  {
+    "name": "WA7SCA-Camera",
+    "ip": "10.53.13.98"
+  },
+  {
+    "name": "WA7SCA-EPSG-EOC-IPPHONE",
+    "ip": "10.53.13.102"
+  },
+  {
+    "name": "AA7AU-CPE210-KHND",
+    "ip": "10.168.121.50"
+  },
+  {
+    "name": "KG7SS-hAP-Tunnel-52",
+    "ip": "10.165.20.52"
+  },
+  {
+    "name": "W5SAT-Shack",
+    "ip": "10.70.47.220"
+  },
+  {
+    "name": "raspberrypi3",
+    "ip": "10.70.47.219"
+  },
+  {
+    "name": "AMC066F3A7BA9E1429",
+    "ip": "10.70.47.217"
+  },
+  {
+    "name": "Raspberry-Pi-4",
+    "ip": "10.70.47.219"
+  },
+  {
+    "name": "W5SAT-4-HAP-AC-LITE-212-98-252",
+    "ip": "10.212.98.253"
+  },
+  {
+    "name": "PotosiAirCamRack",
+    "ip": "10.104.25.153"
+  },
+  {
+    "name": "KE6BXT-Potosi-Fisheye",
+    "ip": "10.104.25.149"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-Potosi-M2R-54-129-153",
+    "ip": "10.54.129.153"
+  },
+  {
+    "name": "NO7E-RBLHG-5HPnD",
+    "ip": "10.251.223.179"
+  },
+  {
+    "name": "KI7MKQ-hAP-162-93-215",
+    "ip": "10.162.93.215"
+  },
+  {
+    "name": "W5SAT-3-MikroTik-LHG-HP2-XL-241-220-95",
+    "ip": "10.241.220.95"
+  },
+  {
+    "name": "K7FYI-ASp",
+    "ip": "10.18.186.37"
+  },
+  {
+    "name": "RL-LNOV-1",
+    "ip": "10.18.186.45"
+  },
+  {
+    "name": "K7FYI-AS1",
+    "ip": "10.18.186.35"
+  },
+  {
+    "name": "K7FYI-RPi-3",
+    "ip": "10.18.186.38"
+  },
+  {
+    "name": "K7FYI-RPi-2",
+    "ip": "10.18.186.41"
+  },
+  {
+    "name": "RickLiPhone",
+    "ip": "10.18.186.42"
+  },
+  {
+    "name": "K7FYI-GS",
+    "ip": "10.18.186.46"
+  },
+  {
+    "name": "K7FYI-Pi",
+    "ip": "10.18.186.40"
+  },
+  {
+    "name": "rl-ubtu-02",
+    "ip": "10.18.186.34"
+  },
+  {
+    "name": "K7FYI-hAP-ac",
+    "ip": "10.65.43.162"
+  },
+  {
+    "name": "WA6MZW-Hap-Tunnel3",
+    "ip": "10.32.136.62"
+  },
+  {
+    "name": "N6SFX-LVMESH-CPE510-N2",
+    "ip": "10.232.59.194"
+  },
+  {
+    "name": "K7KSG-RM5X120-KHND",
+    "ip": "10.8.25.132"
+  },
+  {
+    "name": "KE6BXT-LVQTH-M2R-Omni-130",
+    "ip": "10.54.128.130"
+  },
+  {
+    "name": "W6MW-hAP-Tunnel-4",
+    "ip": "10.50.19.4"
+  },
+  {
+    "name": "K7RSW-East-5G",
+    "ip": "10.176.243.46"
+  },
+  {
+    "name": "K7FYI-MKTK5HP2-SE",
+    "ip": "10.95.189.195"
+  },
+  {
+    "name": "W7DGU-HARC-CPE210",
+    "ip": "10.71.178.144"
+  },
+  {
+    "name": "KE6BXT-N7ZEV-M2R-Link2Potosi-66-134-132",
+    "ip": "10.66.134.132"
+  }
+]

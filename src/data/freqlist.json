@@ -1,0 +1,92 @@
+[
+  {
+    "restricted": false,
+    "mhz": 2387,
+    "channel": 252
+  },
+  {
+    "restricted": false,
+    "mhz": 2392,
+    "channel": 253
+  },
+  {
+    "restricted": false,
+    "mhz": 2397,
+    "channel": 254
+  },
+  {
+    "restricted": false,
+    "mhz": 2402,
+    "channel": 255
+  },
+  {
+    "restricted": false,
+    "mhz": 2412,
+    "channel": 1
+  },
+  {
+    "restricted": false,
+    "mhz": 2417,
+    "channel": 2
+  },
+  {
+    "restricted": false,
+    "mhz": 2422,
+    "channel": 3
+  },
+  {
+    "restricted": false,
+    "mhz": 2427,
+    "channel": 4
+  },
+  {
+    "restricted": false,
+    "mhz": 2432,
+    "channel": 5
+  },
+  {
+    "restricted": false,
+    "mhz": 2437,
+    "channel": 6
+  },
+  {
+    "restricted": false,
+    "mhz": 2442,
+    "channel": 7
+  },
+  {
+    "restricted": false,
+    "mhz": 2447,
+    "channel": 8
+  },
+  {
+    "restricted": false,
+    "mhz": 2452,
+    "channel": 9
+  },
+  {
+    "restricted": false,
+    "mhz": 2457,
+    "channel": 10
+  },
+  {
+    "restricted": false,
+    "mhz": 2462,
+    "channel": 11
+  },
+  {
+    "restricted": false,
+    "mhz": 2467,
+    "channel": 12
+  },
+  {
+    "restricted": false,
+    "mhz": 2472,
+    "channel": 13
+  },
+  {
+    "restricted": false,
+    "mhz": 2484,
+    "channel": 14
+  }
+]

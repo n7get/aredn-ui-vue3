@@ -1,0 +1,312 @@
+[
+  {
+    "etx": "0.20",
+    "name": "N7HWM-hAP-Tunnel-84",
+    "ip": "10.54.237.85"
+  },
+  {
+    "etx": "0.20",
+    "name": "W7DGU-hAP-193-224-159",
+    "ip": "10.193.224.160"
+  },
+  {
+    "etx": "0.20",
+    "name": "KI7AQO-hAP-Tunnel-45",
+    "ip": "10.41.158.45"
+  },
+  {
+    "etx": "0.20",
+    "name": "KA2BLQ-hAP-83",
+    "ip": "10.37.64.83"
+  },
+  {
+    "etx": "0.20",
+    "name": "KE6BXT-hAP-MAP-217",
+    "ip": "10.161.244.212"
+  },
+  {
+    "etx": "0.20",
+    "name": "KG7SS-hAP-Tunnel-52",
+    "ip": "10.165.20.52"
+  },
+  {
+    "etx": "0.20",
+    "name": "W6MW-hAP-Tunnel-4",
+    "ip": "10.50.19.4"
+  },
+  {
+    "etx": "0.20",
+    "name": "KI7MKQ-hAP-162-93-215",
+    "ip": "10.162.93.215"
+  },
+  {
+    "etx": "0.30",
+    "name": "K7STI-MikroTIK-HAP-Server",
+    "ip": "10.142.255.104"
+  },
+  {
+    "etx": "0.30",
+    "name": "W7DGU-HARC-CPE210",
+    "ip": "10.71.178.144"
+  },
+  {
+    "etx": "0.30",
+    "name": "KE6BXT-N7ZEV-hAP-184",
+    "ip": "10.84.66.185"
+  },
+  {
+    "etx": "0.30",
+    "name": "NO7E-hAP-Tunnel-91",
+    "ip": "10.54.237.92"
+  },
+  {
+    "etx": "0.30",
+    "name": "KF7QQN-hAP-Tunnel-81",
+    "ip": "10.15.91.81"
+  },
+  {
+    "etx": "0.30",
+    "name": "KE6BXT-GigapartsLV-250",
+    "ip": "10.41.168.250"
+  },
+  {
+    "etx": "0.40",
+    "name": "KE6BXT-N7ZEV-M5R-OMNI-252-213-192",
+    "ip": "10.252.213.192"
+  },
+  {
+    "etx": "0.40",
+    "name": "NO7E-RBLHG-5HPnD",
+    "ip": "10.251.223.179"
+  },
+  {
+    "etx": "0.40",
+    "name": "KE6BXT-N7ZEV-M2R-Link2Potosi-66-134-132",
+    "ip": "10.66.134.132"
+  },
+  {
+    "etx": "0.40",
+    "name": "N7ZEV-KB7HTA-APEX-RM5S60",
+    "ip": "10.110.169.123"
+  },
+  {
+    "etx": "0.40",
+    "name": "KE6BXT-N7ZEV-M5RDish-to-Red-Mtn",
+    "ip": "10.72.155.171"
+  },
+  {
+    "etx": "0.40",
+    "name": "K7STI-MikroTIK-5HPXL-SWLV-APEX",
+    "ip": "10.198.3.67"
+  },
+  {
+    "etx": "1.20",
+    "name": "KE6BXT-LVQTH-M2NS-South-160-24-191",
+    "ip": "10.160.24.191"
+  },
+  {
+    "etx": "1.20",
+    "name": "KE6BXT-LVQTH-AR-138",
+    "ip": "10.64.98.138"
+  },
+  {
+    "etx": "1.20",
+    "name": "KE6BXT-hAP-NightlyBuildTesting-250-124-62",
+    "ip": "10.250.124.63"
+  },
+  {
+    "etx": "1.30",
+    "name": "AA7AU-CPE210-KHND",
+    "ip": "10.168.121.50"
+  },
+  {
+    "etx": "1.30",
+    "name": "KE6BXT-LVQTH-M5NS-XW-South-74-147-33",
+    "ip": "10.74.147.33"
+  },
+  {
+    "etx": "1.35",
+    "name": "N7HWM-CPE210",
+    "ip": "10.188.51.160"
+  },
+  {
+    "etx": "1.39",
+    "name": "KE6BXT-LVQTH-M2R-Omni-130",
+    "ip": "10.54.128.130"
+  },
+  {
+    "etx": "1.40",
+    "name": "KB7HTA-LVMESH-RM5S90-APEX2",
+    "ip": "10.62.198.87"
+  },
+  {
+    "etx": "1.40",
+    "name": "KB7HTA-LVMESH-RM5D30-APEX0",
+    "ip": "10.170.175.61"
+  },
+  {
+    "etx": "1.40",
+    "name": "W7HEN-LVMESH-RM5S90-APEX1",
+    "ip": "10.100.151.72"
+  },
+  {
+    "etx": "1.40",
+    "name": "K7KSG-RM5X120-KHND",
+    "ip": "10.8.25.132"
+  },
+  {
+    "etx": "1.50",
+    "name": "KB7HTA-LVMESH-RM2D24-Beaconhill",
+    "ip": "10.12.46.208"
+  },
+  {
+    "etx": "1.61",
+    "name": "KE6BXT-N7ZEV-Potosi-M5R-252-216-11",
+    "ip": "10.252.216.11"
+  },
+  {
+    "etx": "1.71",
+    "name": "KE6BXT-N7ZEV-Potosi-M2R-54-129-153",
+    "ip": "10.54.129.153"
+  },
+  {
+    "etx": "1.85",
+    "name": "N6SFX-K7FYI-LVMESH-RM5S90-REDMTN-LV",
+    "ip": "10.102.188.55"
+  },
+  {
+    "etx": "1.95",
+    "name": "N6SFX-KB7HTA-LVMESH-M5S90-REDMTN-BC",
+    "ip": "10.166.86.83"
+  },
+  {
+    "etx": "1.95",
+    "name": "N6SFX-K7FYI-LVMESH-RM5D30-REDMTN",
+    "ip": "10.102.191.10"
+  },
+  {
+    "etx": "2.40",
+    "name": "KI7BJV-LVMESH-RBLHG5ND",
+    "ip": "10.217.115.58"
+  },
+  {
+    "etx": "2.63",
+    "name": "KB7HTA-LVMESH-RM5D30-LO",
+    "ip": "10.106.187.60"
+  },
+  {
+    "etx": "2.64",
+    "name": "N6YKE-CSI-5G21-90-Sector",
+    "ip": "10.162.196.202"
+  },
+  {
+    "etx": "2.69",
+    "name": "KF7PSM-MKTK5HP",
+    "ip": "10.185.74.57"
+  },
+  {
+    "etx": "2.73",
+    "name": "KB7HTA-LVMESH-NM2--N0",
+    "ip": "10.110.95.108"
+  },
+  {
+    "etx": "2.78",
+    "name": "W5SAT-1-MikroTik-LHG-HP5-86-68-38",
+    "ip": "10.86.68.38"
+  },
+  {
+    "etx": "2.79",
+    "name": "KF7PSM-NW1",
+    "ip": "10.136.176.105"
+  },
+  {
+    "etx": "2.88",
+    "name": "W5SAT-2-MikroTik-LHG-HP5-XL-173-136-102",
+    "ip": "10.173.136.102"
+  },
+  {
+    "etx": "2.88",
+    "name": "W5SAT-4-HAP-AC-LITE-212-98-252",
+    "ip": "10.212.98.253"
+  },
+  {
+    "etx": "2.88",
+    "name": "W5SAT-3-MikroTik-LHG-HP2-XL-241-220-95",
+    "ip": "10.241.220.95"
+  },
+  {
+    "etx": "2.95",
+    "name": "K7FYI-MKTK5HP2-SE",
+    "ip": "10.95.189.195"
+  },
+  {
+    "etx": "3.04",
+    "name": "KG7SS-LHGXLHP5-85-194-139",
+    "ip": "10.85.194.139"
+  },
+  {
+    "etx": "3.05",
+    "name": "K7FYI-hAP-ac",
+    "ip": "10.65.43.162"
+  },
+  {
+    "etx": "3.19",
+    "name": "N6SFX-LVMESH-CPE510-N2",
+    "ip": "10.232.59.194"
+  },
+  {
+    "etx": "3.50",
+    "name": "K7RSW-East-5G",
+    "ip": "10.176.243.46"
+  },
+  {
+    "etx": "3.63",
+    "name": "WA6MZW-M5XM-Omni-4",
+    "ip": "10.154.71.185"
+  },
+  {
+    "etx": "3.69",
+    "name": "KF7PSM-INT1",
+    "ip": "10.6.182.205"
+  },
+  {
+    "etx": "3.73",
+    "name": "WA6MZW-Hap5-Tunnel8",
+    "ip": "10.155.207.196"
+  },
+  {
+    "etx": "3.79",
+    "name": "K7THB-NanoBridgeM5-one",
+    "ip": "10.54.169.38"
+  },
+  {
+    "etx": "3.83",
+    "name": "WA6MZW-Hap-Tunnel3",
+    "ip": "10.32.136.62"
+  },
+  {
+    "etx": "3.96",
+    "name": "W5SAT-5-GL-INET-AR300M16-24-226-240",
+    "ip": "10.24.226.240"
+  },
+  {
+    "etx": "4.19",
+    "name": "N6SFX-LVMESH-LGHXLHP5-N3",
+    "ip": "10.198.0.215"
+  },
+  {
+    "etx": "4.62",
+    "name": "K7FYI-TPL210",
+    "ip": "10.58.32.120"
+  },
+  {
+    "etx": "7.26",
+    "name": "N6YKE-CPE210",
+    "ip": "10.188.44.56"
+  },
+  {
+    "etx": "8.97",
+    "name": "KE6BXT-LVQTH-M5R-Omni-241",
+    "ip": "10.6.163.241"
+  }
+]

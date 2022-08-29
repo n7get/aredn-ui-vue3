@@ -1,0 +1,31 @@
+{
+  "10.148.63.176": {
+    "helloTime": 0,
+    "lostLinkTime": 0,
+    "linkQuality": 1,
+    "vtime": 20000,
+    "linkCost": 1,
+    "linkType": "RF",
+    "hostname": "N7GET-M2-1",
+    "validityTime": 38652,
+    "previousLinkStatus": "SYMMETRIC",
+    "currentLinkStatus": "SYMMETRIC",
+    "rx_rate": 52,
+    "neighborLinkQuality": 1,
+    "noise": -88,
+    "symmetryTime": 19500,
+    "seqnoValid": false,
+    "lossMultiplier": 65536,
+    "pending": false,
+    "lossHelloInterval": 2000,
+    "asymmetryTime": 160128932,
+    "tx_rate": 65,
+    "hysteresis": 0,
+    "seqno": 0,
+    "lossTime": 2500,
+    "expected_throughput": 22.9,
+    "olsrInterface": "wlan1",
+    "lastHelloTime": 0,
+    "signal": -46
+  }
+}
