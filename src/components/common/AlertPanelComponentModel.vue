@@ -16,20 +16,20 @@
 <script setup lang="ts">
 import { computed, defineProps } from "vue";
 import { storeToRefs } from "pinia";
-import { useAppStore } from "@/stores/AppStore";
 import { useNodeStore } from "../../stores/NodeStore";
+import { useSessionStore } from "@/stores/SessionStore";
 
 const props = defineProps<{
   title: string;
   type: string;
 }>();
 
-const appStore = useAppStore();
+const sessionStore = useSessionStore();
 const nodeStore = useNodeStore();
 
 const { alerts } = storeToRefs(nodeStore);
-const { seenAlerts } = storeToRefs(appStore);
-const setSeenAlert = appStore.setSeenAlert;
+const { seenAlerts } = storeToRefs(sessionStore);
+const setSeenAlert = sessionStore.setSeenAlert;
 
 const showAlert = computed((): boolean => {
   if (alerts.value[props.type] && seenAlerts.value[props.type]) {

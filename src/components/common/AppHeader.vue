@@ -79,18 +79,20 @@
 </template>
 
 <script lang="ts">
-import { useAppStore } from "@/stores/AppStore";
 import { defineComponent } from "vue";
+import { useAppStore } from "@/stores/AppStore";
+import { useSessionStore } from "@/stores/SessionStore";
 
 export default defineComponent({
   setup: () => {
-    const appStore = useAppStore();
+    const appStore = useSessionStore();
+    const sessionStore = useSessionStore();
 
     return {
       nodeName: appStore.nodeName,
 
-      seenAlerts: appStore.seenAlerts,
-      clearSeenAlerts: appStore.clearSeenAlerts,
+      seenAlerts: sessionStore.seenAlerts,
+      clearSeenAlerts: sessionStore.clearSeenAlerts,
     };
   },
   data() {

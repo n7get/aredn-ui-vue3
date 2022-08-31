@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import { useAppStore } from "@/stores/AppStore";
 import { useNodeStore } from "../../stores/NodeStore";
+import { useSessionStore } from "@/stores/SessionStore";
 
 export default defineComponent({
   name: "AlertPanelSemiComponentModel",
@@ -31,12 +31,12 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const appStore = useAppStore();
+    const sessionStore = useSessionStore();
     const nodeStore = useNodeStore();
 
     const alerts = nodeStore.alerts;
-    const seenAlerts = appStore.seenAlerts;
-    const setSeenAlert = appStore.setSeenAlert;
+    const seenAlerts = sessionStore.seenAlerts;
+    const setSeenAlert = sessionStore.setSeenAlert;
 
     const showAlert = computed((): boolean => {
       if (alerts[props.type] && seenAlerts[props.type]) {

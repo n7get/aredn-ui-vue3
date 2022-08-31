@@ -16,19 +16,19 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { storeToRefs } from "pinia";
-import { useAppStore } from "@/stores/AppStore";
 import { useNodeStore } from "../../stores/NodeStore";
+import { useSessionStore } from "@/stores/SessionStore";
 
 export default defineComponent({
   name: "AlertPanelOptionsModel",
   setup() {
-    const appStore = useAppStore();
     const nodeStore = useNodeStore();
+    const sessionStore = useSessionStore();
 
     const { alerts } = storeToRefs(nodeStore);
-    const { seenAlerts } = storeToRefs(appStore);
+    const { seenAlerts } = storeToRefs(sessionStore);
 
-    const setSeenAlert = appStore.setSeenAlert;
+    const setSeenAlert = sessionStore.setSeenAlert;
 
     return {
       alerts,
