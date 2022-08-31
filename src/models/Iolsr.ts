@@ -1,5 +1,4 @@
 export interface Iolsr {
-  nodes: string;
-  entries: string;
+  nodes: string
+  entries: string
 }
-

@@ -14,38 +14,38 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from "vue";
-import { storeToRefs } from "pinia";
-import { useNodeStore } from "../../stores/NodeStore";
-import { useSessionStore } from "@/stores/SessionStore";
+import { computed, defineProps } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useNodeStore } from '../../stores/NodeStore'
+import { useSessionStore } from '@/stores/SessionStore'
 
 const props = defineProps<{
-  title: string;
-  type: string;
-}>();
+  title: string
+  type: string
+}>()
 
-const sessionStore = useSessionStore();
-const nodeStore = useNodeStore();
+const sessionStore = useSessionStore()
+const nodeStore = useNodeStore()
 
-const { alerts } = storeToRefs(nodeStore);
-const { seenAlerts } = storeToRefs(sessionStore);
-const setSeenAlert = sessionStore.setSeenAlert;
+const { alerts } = storeToRefs(nodeStore)
+const { seenAlerts } = storeToRefs(sessionStore)
+const setSeenAlert = sessionStore.setSeenAlert
 
 const showAlert = computed((): boolean => {
   if (alerts.value[props.type] && seenAlerts.value[props.type]) {
-    return seenAlerts.value[props.type] !== alerts.value[props.type];
+    return seenAlerts.value[props.type] !== alerts.value[props.type]
   }
-  return !!alerts.value[props.type];
-});
+  return !!alerts.value[props.type]
+})
 
 function clearAlert() {
-  setSeenAlert(props.type, alerts.value[props.type]);
+  setSeenAlert(props.type, alerts.value[props.type])
 }
 
 const message = computed((): string => {
   if (alerts.value[props.type]) {
-    return alerts.value[props.type];
+    return alerts.value[props.type]
   }
-  return "";
-});
+  return ''
+})
 </script>

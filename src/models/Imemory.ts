@@ -1,7 +1,6 @@
 export interface Imemory {
-  freeram: number;
-  totalram: number;
-  sharedram: number;
-  bufferram: number;
+  freeram: number
+  totalram: number
+  sharedram: number
+  bufferram: number
 }
-

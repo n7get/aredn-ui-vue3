@@ -38,7 +38,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.description === undefined ? "N/A" : sysinfo.description
+              sysinfo.description === undefined ? 'N/A' : sysinfo.description
             }}
           </v-col>
 
@@ -67,7 +67,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{ sysinfo.model === undefined ? "N/A" : sysinfo.model }}
+            {{ sysinfo.model === undefined ? 'N/A' : sysinfo.model }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -82,7 +82,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.target_type === undefined ? "N/A" : sysinfo.target_type
+              sysinfo.target_type === undefined ? 'N/A' : sysinfo.target_type
             }}
           </v-col>
 
@@ -99,7 +99,7 @@
           >
             {{
               sysinfo.firmware_version === undefined
-                ? "N/A"
+                ? 'N/A'
                 : sysinfo.firmware_version
             }}
           </v-col>
@@ -116,7 +116,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.api_version === undefined ? "N/A" : sysinfo.api_version
+              sysinfo.api_version === undefined ? 'N/A' : sysinfo.api_version
             }}
           </v-col>
         </v-row>
@@ -126,25 +126,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
-import emitter from "@/services/emitter";
+import { defineComponent, ref } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
+import emitter from '@/services/emitter'
 
 export default defineComponent({
-  name: "SystemStatus",
+  name: 'SystemStatus',
   setup() {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    const showContent = ref(true);
+    const showContent = ref(true)
 
     function toggleContent() {
       // $event.target.blur();
-      showContent.value = !showContent.value;
+      showContent.value = !showContent.value
     }
 
     function openSettings() {
       // $nuxt.$emit("show-system-setup")
-      emitter.emit("open-system-settings");
+      emitter.emit('open-system-settings')
     }
 
     return {
@@ -152,7 +152,7 @@ export default defineComponent({
       showContent,
       sysinfo: nodeStore.sysinfo,
       toggleContent,
-    };
+    }
   },
-});
+})
 </script>

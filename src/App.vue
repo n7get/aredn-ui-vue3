@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import AlertPanel from "@/components/common/AlertPanelSemiComponentModel.vue";
-import AppHeader from "@/components/common/AppHeader.vue";
-import SystemSettings from "@/components/settings/SystemSettings.vue";
+import AlertPanel from '@/components/common/AlertPanelSemiComponentModel.vue'
+import AppHeader from '@/components/common/AppHeader.vue'
+import SystemSettings from '@/components/settings/SystemSettings.vue'
 </script>

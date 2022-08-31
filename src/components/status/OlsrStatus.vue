@@ -41,26 +41,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
+import { defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
 
 export default defineComponent({
-  name: "OlsrStatus",
+  name: 'OlsrStatus',
   setup: () => {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    return { olsr: nodeStore.olsr };
+    return { olsr: nodeStore.olsr }
   },
   data() {
     return {
       showContent: true,
-    };
+    }
   },
   methods: {
     toggleContent() {
       // $event.target.blur()
-      this.showContent = !this.showContent;
+      this.showContent = !this.showContent
     },
   },
-});
+})
 </script>

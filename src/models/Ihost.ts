@@ -1,4 +1,4 @@
 export interface Ihost {
-  name: string;
-  ip: string;
+  name: string
+  ip: string
 }

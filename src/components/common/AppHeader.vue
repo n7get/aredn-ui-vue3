@@ -79,28 +79,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useAppStore } from "@/stores/AppStore";
-import { useSessionStore } from "@/stores/SessionStore";
+import { defineComponent } from 'vue'
+import { useAppStore } from '@/stores/AppStore'
+import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({
   setup: () => {
-    const appStore = useSessionStore();
-    const sessionStore = useSessionStore();
+    const appStore = useAppStore()
+    const sessionStore = useSessionStore()
 
     return {
       nodeName: appStore.nodeName,
 
       seenAlerts: sessionStore.seenAlerts,
       clearSeenAlerts: sessionStore.clearSeenAlerts,
-    };
+    }
   },
   data() {
     return {
       clipped: true,
       drawer: false,
       miniVariant: false,
-    };
+    }
   },
   methods: {
     emitRefresh() {
@@ -109,8 +109,8 @@ export default defineComponent({
   },
   computed: {
     hasSeenAlerts() {
-      return !!this.seenAlerts.aredn || !!this.seenAlerts.local;
+      return !!this.seenAlerts.aredn || !!this.seenAlerts.local
     },
   },
-});
+})
 </script>

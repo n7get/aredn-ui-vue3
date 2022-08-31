@@ -26,22 +26,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 // import { mapState } from "pinia";
 // import { useAppStore } from "../../stores/AppStore";
 // import { useNodeStore } from "../../stores/NodeStore";
 
-import FilesystemStatus from "../components/status/FilesystemStatus.vue";
-import IpAddressStatus from "../components/status/IpAddressStatus.vue";
-import LocationStatus from "../components/status/LocationStatus.vue";
-import MemoryStatus from "../components/status/MemoryStatus.vue";
-import MeshRfStatus from "../components/status/MeshRfStatus.vue";
-import OlsrStatus from "../components/status/OlsrStatus.vue";
-import PerformanceStatus from "../components/status/PerformanceStatus.vue";
-import SystemStatus from "../components/status/SystemStatus.vue";
+import FilesystemStatus from '../components/status/FilesystemStatus.vue'
+import IpAddressStatus from '../components/status/IpAddressStatus.vue'
+import LocationStatus from '../components/status/LocationStatus.vue'
+import MemoryStatus from '../components/status/MemoryStatus.vue'
+import MeshRfStatus from '../components/status/MeshRfStatus.vue'
+import OlsrStatus from '../components/status/OlsrStatus.vue'
+import PerformanceStatus from '../components/status/PerformanceStatus.vue'
+import SystemStatus from '../components/status/SystemStatus.vue'
 
 export default defineComponent({
-  name: "StatusView",
+  name: 'StatusView',
   components: {
     FilesystemStatus,
     IpAddressStatus,
@@ -84,5 +84,5 @@ export default defineComponent({
   // mounted() {
   //   this.loadResources()
   // },
-});
+})
 </script>

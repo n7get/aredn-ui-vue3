@@ -50,31 +50,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
+import { defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
 
 export default defineComponent({
-  name: "MemoryStatus",
+  name: 'MemoryStatus',
   setup: () => {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    return { memory: nodeStore.memory };
+    return { memory: nodeStore.memory }
   },
   data() {
     return {
       showContent: true,
-    };
+    }
   },
   methods: {
     toggleContent() {
       // $event.target.blur()
-      this.showContent = !this.showContent;
+      this.showContent = !this.showContent
     },
   },
   computed: {
     freerampctfree() {
-      return ((this.memory.freeram / this.memory.totalram) * 100).toFixed(3);
+      return ((this.memory.freeram / this.memory.totalram) * 100).toFixed(3)
     },
   },
-});
+})
 </script>

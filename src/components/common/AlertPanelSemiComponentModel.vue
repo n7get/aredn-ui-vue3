@@ -14,12 +14,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
-import { useSessionStore } from "@/stores/SessionStore";
+import { computed, defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
+import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({
-  name: "AlertPanelSemiComponentModel",
+  name: 'AlertPanelSemiComponentModel',
   props: {
     title: {
       type: String,
@@ -31,37 +31,37 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const sessionStore = useSessionStore();
-    const nodeStore = useNodeStore();
+    const sessionStore = useSessionStore()
+    const nodeStore = useNodeStore()
 
-    const alerts = nodeStore.alerts;
-    const seenAlerts = sessionStore.seenAlerts;
-    const setSeenAlert = sessionStore.setSeenAlert;
+    const alerts = nodeStore.alerts
+    const seenAlerts = sessionStore.seenAlerts
+    const setSeenAlert = sessionStore.setSeenAlert
 
     const showAlert = computed((): boolean => {
       if (alerts[props.type] && seenAlerts[props.type]) {
-        return seenAlerts[props.type] !== alerts[props.type];
+        return seenAlerts[props.type] !== alerts[props.type]
       }
-      return !!alerts[props.type];
-    });
+      return !!alerts[props.type]
+    })
 
     function clearAlert() {
-      setSeenAlert(props.type, alerts[props.type]);
+      setSeenAlert(props.type, alerts[props.type])
     }
 
     const message = computed((): string => {
       if (alerts[props.type]) {
-        return alerts[props.type];
+        return alerts[props.type]
       }
-      return "";
-    });
+      return ''
+    })
 
     return {
       alerts,
       clearAlert,
       message,
       showAlert,
-    };
+    }
   },
-});
+})
 </script>

@@ -1,21 +1,21 @@
-import { defineStore } from "pinia";
-import { useSessionStorage } from "@vueuse/core";
-import { Ialerts } from "@/models/Ialert";
+import { defineStore } from 'pinia'
+import { useSessionStorage } from '@vueuse/core'
+import { Ialerts } from '@/models/Ialert'
 
-export const useSessionStore = defineStore("SessionStore", () => {
-  const seenAlerts = useSessionStorage("aredn/seenAlerts", {} as Ialerts);
+export const useSessionStore = defineStore('SessionStore', () => {
+  const seenAlerts = useSessionStorage<Ialerts>('aredn/seenAlerts', {})
 
   function clearSeenAlerts() {
-    seenAlerts.value["aredn"] = "";
-    seenAlerts.value["local"] = "";
+    seenAlerts.value['aredn'] = ''
+    seenAlerts.value['local'] = ''
   }
   function setSeenAlert(alert: string, value: string) {
-    seenAlerts.value[alert] = value;
+    seenAlerts.value[alert] = value
   }
 
   return {
     seenAlerts,
     clearSeenAlerts,
     setSeenAlert,
-  };
-});
+  }
+})

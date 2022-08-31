@@ -30,21 +30,21 @@
             <span class="font-weight-bold">Latitude:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.lat === "" ? "Not set" : location.lat }}
+            {{ location.lat === '' ? 'Not set' : location.lat }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Longitude:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.lon === "" ? "Not set" : location.lon }}
+            {{ location.lon === '' ? 'Not set' : location.lon }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Grid Square:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.gridsquare === "" ? "Not set" : location.gridsquare }}
+            {{ location.gridsquare === '' ? 'Not set' : location.gridsquare }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -53,29 +53,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
+import { defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
 
 export default defineComponent({
-  name: "LocationStatus",
+  name: 'LocationStatus',
   setup: () => {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    return { location: nodeStore.location };
+    return { location: nodeStore.location }
   },
   data() {
     return {
       showContent: true,
-    };
+    }
   },
   methods: {
     toggleContent() {
       // $event.target.blur()
-      this.showContent = !this.showContent;
+      this.showContent = !this.showContent
     },
     openSettings() {
       // $nuxt.$emit("show-location-setup")
     },
   },
-});
+})
 </script>

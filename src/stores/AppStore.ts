@@ -1,17 +1,17 @@
-import { ref, computed } from "vue";
-import { defineStore } from "pinia";
-import { useNodeStore } from "./NodeStore";
+import { ref, computed } from 'vue'
+import { defineStore } from 'pinia'
+import { useNodeStore } from './NodeStore'
 
-export const useAppStore = defineStore("AppStore", () => {
-  const nodeStore = useNodeStore();
+export const useAppStore = defineStore('AppStore', () => {
+  const nodeStore = useNodeStore()
 
-  const hasApiMismatch = ref(false);
-  const legacyUrl = ref("");
+  const hasApiMismatch = ref(false)
+  const legacyUrl = ref('')
 
-  const nodeName = computed(() => nodeStore.sysinfo.node);
+  const nodeName = computed(() => nodeStore.sysinfo.node)
 
   function setApiMismatch(value: boolean) {
-    hasApiMismatch.value = value;
+    hasApiMismatch.value = value
   }
 
   return {
@@ -19,5 +19,5 @@ export const useAppStore = defineStore("AppStore", () => {
     legacyUrl,
     nodeName,
     setApiMismatch,
-  };
-});
+  }
+})

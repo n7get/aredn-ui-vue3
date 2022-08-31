@@ -1,3 +1,3 @@
 export interface Ialerts {
-  [aredh: string]: string;
+  [aredh: string]: string
 }

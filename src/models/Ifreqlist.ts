@@ -1,5 +1,5 @@
 export interface Ifreqlist {
-  restricted: boolean;
-  mhz: number;
-  channel: number;
+  restricted: boolean
+  mhz: number
+  channel: number
 }

@@ -15,29 +15,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import emitter from "@/services/emitter";
+import { defineComponent, ref } from 'vue'
+import emitter from '@/services/emitter'
 
 export default defineComponent({
-  name: "SystemSettings",
+  name: 'SystemSettings',
   setup() {
-    const showDialog = ref(false);
+    const showDialog = ref(false)
 
     function cancel() {
-      showDialog.value = !showDialog.value;
+      showDialog.value = !showDialog.value
     }
 
     function save() {
-      showDialog.value = !showDialog.value;
+      showDialog.value = !showDialog.value
     }
 
-    emitter.on("open-system-settings", () => (showDialog.value = true));
+    emitter.on('open-system-settings', () => (showDialog.value = true))
 
     return {
       cancel,
       save,
       showDialog,
-    };
+    }
   },
-});
+})
 </script>

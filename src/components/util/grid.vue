@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "grid",
-});
+  name: 'grid',
+})
 </script>

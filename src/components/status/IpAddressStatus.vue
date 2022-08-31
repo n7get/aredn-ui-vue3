@@ -30,7 +30,7 @@
             <span class="font-weight-bold">RF:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.wifi === "" ? "Disabled" : ip.wifi }}
+            {{ ip.wifi === '' ? 'Disabled' : ip.wifi }}
           </v-col>
 
           <v-col cols="6">
@@ -44,7 +44,7 @@
             <span class="font-weight-bold">WAN:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.wan === "" ? "n/a" : ip.wan }}
+            {{ ip.wan === '' ? 'n/a' : ip.wan }}
           </v-col>
 
           <v-col cols="6">
@@ -60,29 +60,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
+import { defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
 
 export default defineComponent({
-  name: "IpAddressStatus",
+  name: 'IpAddressStatus',
   setup: () => {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    return { ip: nodeStore.ip };
+    return { ip: nodeStore.ip }
   },
   data() {
     return {
       showContent: true,
-    };
+    }
   },
   methods: {
     toggleContent() {
       // $event.target.blur()
-      this.showContent = !this.showContent;
+      this.showContent = !this.showContent
     },
     openSettings() {
       //   $nuxt.$emit("show-ipaddresses-setup")
     },
   },
-});
+})
 </script>

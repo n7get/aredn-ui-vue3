@@ -53,25 +53,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { useNodeStore } from "../../stores/NodeStore";
+import { defineComponent } from 'vue'
+import { useNodeStore } from '../../stores/NodeStore'
 
 export default defineComponent({
-  name: "FilesystemStatus",
+  name: 'FilesystemStatus',
   setup: () => {
-    const nodeStore = useNodeStore();
+    const nodeStore = useNodeStore()
 
-    return { storage: nodeStore.storage };
+    return { storage: nodeStore.storage }
   },
   data() {
     return {
       showContent: true,
-    };
+    }
   },
   methods: {
     toggleContent() {
       // $event.target.blur()
-      this.showContent = !this.showContent;
+      this.showContent = !this.showContent
     },
   },
   computed: {
@@ -80,8 +80,8 @@ export default defineComponent({
       return ((this.storage.rootfree / this.storage.roottotal) * 100).toFixed(3);
     },
     tmppctfree() {
-      return ((this.storage.tmpfree / this.storage.tmptotal) * 100).toFixed(3);
+      return ((this.storage.tmpfree / this.storage.tmptotal) * 100).toFixed(3)
     },
   },
-});
+})
 </script>
