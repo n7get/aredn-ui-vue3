@@ -42,7 +42,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useNodeStore } from '../../stores/NodeStore'
+import { useNodeStore } from '@/stores/NodeStore'
 
 export default defineComponent({
   name: 'OlsrStatus',

@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useNodeStore } from '../../stores/NodeStore'
+import { useNodeStore } from '@/stores/NodeStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({

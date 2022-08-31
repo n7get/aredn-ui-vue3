@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useNodeStore } from '../../stores/NodeStore'
+import { useNodeStore } from '@/stores/NodeStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({

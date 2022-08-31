@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { computed, defineProps } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useNodeStore } from '../../stores/NodeStore'
+import { useNodeStore } from '@/stores/NodeStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 const props = defineProps<{

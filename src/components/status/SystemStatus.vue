@@ -13,8 +13,8 @@
           <v-icon v-else @click.stop="toggleContent" class="white--text mb-1">
             mdi-arrow-up-drop-circle
           </v-icon>
-          System</v-col
-        >
+          System
+        </v-col>
         <v-col cols="2" align="right">
           <v-icon @click.stop="openSettings" class="white--text">
             mdi-cog
@@ -127,7 +127,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useNodeStore } from '../../stores/NodeStore'
+import { useNodeStore } from '@/stores/NodeStore'
 import emitter from '@/services/emitter'
 
 export default defineComponent({
