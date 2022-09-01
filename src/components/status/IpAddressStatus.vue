@@ -62,18 +62,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
-import emitter from '@/services/emitter'
 import useToggleContent from '@/use/toggleContent'
+import useOpenSettings from '@/use/openSettings'
+import { SettingDialogs } from '@/types'
 
 export default defineComponent({
   name: 'IpAddressStatus',
   setup() {
     const nodeStore = useNodeStore()
 
-    function openSettings() {
-      // $nuxt.$emit("show-ipaddresses-setup")
-      emitter.emit('show-ipaddresses-setup')
-    }
+    const { openSettings } = useOpenSettings(SettingDialogs.ipaddresses)
 
     return {
       ...useToggleContent(),

@@ -16,7 +16,7 @@
           System
         </v-col>
         <v-col cols="2" align="right">
-          <v-icon @click.stop="openSettings" class="white--text">
+          <v-icon @click.stop="openSettings()" class="white--text">
             mdi-cog
           </v-icon>
         </v-col>
@@ -128,18 +128,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
-import emitter from '@/services/emitter'
 import useToggleContent from '@/use/toggleContent'
+import useOpenSettings from '@/use/openSettings'
+import { SettingDialogs } from '@/types'
 
 export default defineComponent({
   name: 'SystemStatus',
   setup() {
     const nodeStore = useNodeStore()
 
-    function openSettings() {
-      // $nuxt.$emit("show-system-setup")
-      emitter.emit('open-system-settings')
-    }
+    const { openSettings } = useOpenSettings(SettingDialogs.system)
 
     return {
       ...useToggleContent(),

@@ -15,23 +15,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import emitter from '@/services/emitter'
+import { defineComponent } from 'vue'
+import { SettingDialogs } from '@/types'
+import useOpenSettings from '@/use/openSettings'
 
 export default defineComponent({
   name: 'SystemSettings',
   setup() {
-    const showDialog = ref(false)
+    const { closeSettings, onOpenSettings, showDialog } = useOpenSettings(
+      SettingDialogs.system
+    )
 
     function cancel() {
-      showDialog.value = !showDialog.value
+      closeSettings()
     }
 
     function save() {
-      showDialog.value = !showDialog.value
+      closeSettings()
     }
 
-    emitter.on('open-system-settings', () => (showDialog.value = true))
+    onOpenSettings()
 
     return {
       cancel,

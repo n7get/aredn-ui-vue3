@@ -55,18 +55,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
-import emitter from '@/services/emitter'
 import useToggleContent from '@/use/toggleContent'
+import useOpenSettings from '@/use/openSettings'
+import { SettingDialogs } from '@/types'
 
 export default defineComponent({
   name: 'LocationStatus',
   setup() {
     const nodeStore = useNodeStore()
 
-    function openSettings() {
-      // $nuxt.$emit("show-location-setup")
-      emitter.emit('show-location-setup')
-    }
+    const { openSettings } = useOpenSettings(SettingDialogs.location)
 
     return {
       ...useToggleContent(),
