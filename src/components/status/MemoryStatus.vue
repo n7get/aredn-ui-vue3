@@ -51,9 +51,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { computed } from '@vue/reactivity'
 import { useNodeStore } from '@/stores/NodeStore'
 import useToggleContent from '@/use/toggleContent'
-import { computed } from '@vue/reactivity'
 
 export default defineComponent({
   name: 'MemoryStatus',

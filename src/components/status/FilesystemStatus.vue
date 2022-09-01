@@ -57,18 +57,12 @@ import { defineComponent } from 'vue'
 import { computed } from '@vue/reactivity'
 import { useNodeStore } from '@/stores/NodeStore'
 import useToggleContent from '@/use/toggleContent'
-import emitter from '@/services/emitter'
 
 export default defineComponent({
   name: 'FilesystemStatus',
   setup() {
     const nodeStore = useNodeStore()
     const storage = nodeStore.storage
-
-    function openSettings() {
-      // $nuxt.$emit("show-system-setup")
-      emitter.emit('open-system-settings')
-    }
 
     const rootpctfree = computed(() => {
       // eslint-disable-next-line prettier/prettier
@@ -80,7 +74,6 @@ export default defineComponent({
 
     return {
       ...useToggleContent(),
-      openSettings,
       rootpctfree,
       tmppctfree,
       storage,
