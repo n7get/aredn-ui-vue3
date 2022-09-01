@@ -126,21 +126,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
 import emitter from '@/services/emitter'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'SystemStatus',
   setup() {
     const nodeStore = useNodeStore()
-
-    const showContent = ref(true)
-
-    function toggleContent() {
-      // $event.target.blur();
-      showContent.value = !showContent.value
-    }
 
     function openSettings() {
       // $nuxt.$emit("show-system-setup")
@@ -148,10 +142,9 @@ export default defineComponent({
     }
 
     return {
+      ...useToggleContent(),
       openSettings,
-      showContent,
       sysinfo: nodeStore.sysinfo,
-      toggleContent,
     }
   },
 })

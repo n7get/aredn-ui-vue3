@@ -52,29 +52,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import useToggleContent from '@/use/toggleContent'
+import { computed } from '@vue/reactivity'
 
 export default defineComponent({
   name: 'MemoryStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
+    const memory = nodeStore.memory
 
-    return { memory: nodeStore.memory }
-  },
-  data() {
+    const freerampctfree = computed(() => {
+      return ((memory.freeram / memory.totalram) * 100).toFixed(3)
+    })
+
     return {
-      showContent: true,
+      ...useToggleContent(),
+      freerampctfree,
+      memory,
     }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
-  },
-  computed: {
-    freerampctfree() {
-      return ((this.memory.freeram / this.memory.totalram) * 100).toFixed(3)
-    },
   },
 })
 </script>

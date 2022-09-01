@@ -54,34 +54,37 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { computed } from '@vue/reactivity'
 import { useNodeStore } from '@/stores/NodeStore'
+import useToggleContent from '@/use/toggleContent'
+import emitter from '@/services/emitter'
 
 export default defineComponent({
   name: 'FilesystemStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
+    const storage = nodeStore.storage
 
-    return { storage: nodeStore.storage }
-  },
-  data() {
-    return {
-      showContent: true,
+    function openSettings() {
+      // $nuxt.$emit("show-system-setup")
+      emitter.emit('open-system-settings')
     }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
-  },
-  computed: {
-    rootpctfree() {
+
+    const rootpctfree = computed(() => {
       // eslint-disable-next-line prettier/prettier
-      return ((this.storage.rootfree / this.storage.roottotal) * 100).toFixed(3);
-    },
-    tmppctfree() {
-      return ((this.storage.tmpfree / this.storage.tmptotal) * 100).toFixed(3)
-    },
+      return ((storage.rootfree / storage.roottotal) * 100).toFixed(3)
+    })
+    const tmppctfree = computed(() => {
+      return ((storage.tmpfree / storage.tmptotal) * 100).toFixed(3)
+    })
+
+    return {
+      ...useToggleContent(),
+      openSettings,
+      rootpctfree,
+      tmppctfree,
+      storage,
+    }
   },
 })
 </script>

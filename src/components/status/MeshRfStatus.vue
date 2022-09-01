@@ -62,27 +62,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import emitter from '@/services/emitter'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'MeshRfStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
 
-    return { meshrf: nodeStore.meshrf }
-  },
-  data() {
-    return {
-      showContent: true,
-    }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
-    openSettings() {
+    function openSettings() {
       // $nuxt.$emit("show-mesh-setup")
-    },
+      emitter.emit('show-mesh-setup')
+    }
+
+    return {
+      ...useToggleContent(),
+      openSettings,
+      meshrf: nodeStore.meshrf,
+    }
   },
 })
 </script>

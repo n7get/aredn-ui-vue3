@@ -57,24 +57,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'PerformanceStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
 
-    return { sysinfo: nodeStore.sysinfo }
-  },
-  data() {
     return {
-      showContent: true,
+      ...useToggleContent(),
+      sysinfo: nodeStore.sysinfo,
     }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
   },
 })
 </script>

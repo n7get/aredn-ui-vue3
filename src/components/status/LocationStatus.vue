@@ -55,27 +55,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import emitter from '@/services/emitter'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'LocationStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
 
-    return { location: nodeStore.location }
-  },
-  data() {
-    return {
-      showContent: true,
-    }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
-    openSettings() {
+    function openSettings() {
       // $nuxt.$emit("show-location-setup")
-    },
+      emitter.emit('show-location-setup')
+    }
+
+    return {
+      ...useToggleContent(),
+      openSettings,
+      location: nodeStore.location,
+    }
   },
 })
 </script>

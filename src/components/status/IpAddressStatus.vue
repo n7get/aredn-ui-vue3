@@ -62,27 +62,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import emitter from '@/services/emitter'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'IpAddressStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
 
-    return { ip: nodeStore.ip }
-  },
-  data() {
-    return {
-      showContent: true,
+    function openSettings() {
+      // $nuxt.$emit("show-ipaddresses-setup")
+      emitter.emit('show-ipaddresses-setup')
     }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
-    openSettings() {
-      //   $nuxt.$emit("show-ipaddresses-setup")
-    },
+
+    return {
+      ...useToggleContent(),
+      openSettings,
+      ip: nodeStore.ip,
+    }
   },
 })
 </script>

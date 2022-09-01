@@ -43,24 +43,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useNodeStore } from '@/stores/NodeStore'
+import useToggleContent from '@/use/toggleContent'
 
 export default defineComponent({
   name: 'OlsrStatus',
-  setup: () => {
+  setup() {
     const nodeStore = useNodeStore()
 
-    return { olsr: nodeStore.olsr }
-  },
-  data() {
     return {
-      showContent: true,
+      ...useToggleContent(),
+      olsr: nodeStore.olsr,
     }
-  },
-  methods: {
-    toggleContent() {
-      // $event.target.blur()
-      this.showContent = !this.showContent
-    },
   },
 })
 </script>
