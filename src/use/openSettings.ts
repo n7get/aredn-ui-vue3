@@ -1,8 +1,8 @@
 import { ref } from 'vue'
 import emitter from '@/services/emitter'
-import { SettingDialogs } from '@/types'
+import { SettingDialogsEnum } from '@/types'
 
-export default function useOpenSettings(event: SettingDialogs) {
+export default function useOpenSettings(event: SettingDialogsEnum) {
   const showDialog = ref(false)
 
   function openSettings() {

@@ -5,10 +5,10 @@
       <v-app-bar-title v-text="nodeName" />
       <v-spacer />
       <v-col cols="4" sm="2" align="right">
-        <v-icon v-show="hasSeenAlerts" @click="clearSeenAlerts()" class="mr-2">
+        <v-icon v-show="hasSeenAlerts" @click="clearSeenAlerts()" class="mr-3">
           mdi-alert-circle
         </v-icon>
-        <v-icon @click="emitRefresh">mdi-refresh</v-icon>
+        <v-icon @click="emitRefresh" class="mr-3">mdi-refresh</v-icon>
       </v-col>
     </v-app-bar>
 
@@ -79,38 +79,43 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed,  defineComponent, ref } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/AppStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({
-  setup: () => {
+  setup() {
+    const clipped = ref(true)
+    const drawer = ref(false)
+    const miniVariant = ref(false)
+
     const appStore = useAppStore()
     const sessionStore = useSessionStore()
 
-    return {
-      nodeName: appStore.nodeName,
+    const { nodeName } = storeToRefs(appStore)
+    const seenAlerts = sessionStore.seenAlerts
+    const clearSeenAlerts = sessionStore.clearSeenAlerts
+    
+    const hasSeenAlerts = computed(() => {
+      return !!seenAlerts.aredn || !!seenAlerts.local
+    })
 
-      seenAlerts: sessionStore.seenAlerts,
-      clearSeenAlerts: sessionStore.clearSeenAlerts,
+    function emitRefresh() {
+      appStore.clearNodeData()
+      appStore.loadNodeData()
     }
-  },
-  data() {
+
     return {
-      clipped: true,
-      drawer: false,
-      miniVariant: false,
+      clipped,
+      drawer,
+      miniVariant,
+      nodeName,
+      emitRefresh,
+      hasSeenAlerts,
+      seenAlerts,
+      clearSeenAlerts,
     }
-  },
-  methods: {
-    emitRefresh() {
-      // $nuxt.$emit("refresh-node")
-    },
-  },
-  computed: {
-    hasSeenAlerts() {
-      return !!this.seenAlerts.aredn || !!this.seenAlerts.local
-    },
   },
 })
 </script>

@@ -30,28 +30,28 @@
             <span class="font-weight-bold">SSID:</span>
           </v-col>
           <v-col cols="6">
-            {{ meshrf.ssid === undefined ? 'Disabled' : meshrf.ssid }}
+            {{ ssid === undefined ? 'Disabled' : ssid }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Channel:</span>
           </v-col>
           <v-col cols="6">
-            {{ meshrf.channel === undefined ? 'Disabled' : meshrf.channel }}
+            {{ channel === undefined ? 'Disabled' : channel }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Bandwidth (MHz):</span>
           </v-col>
           <v-col cols="6">
-            {{ meshrf.chanbw === undefined ? 'Disabled' : meshrf.chanbw }}
+            {{ chanbw === undefined ? 'Disabled' : chanbw }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Frequency (MHz):</span>
           </v-col>
           <v-col cols="6">
-            {{ meshrf.frequency === undefined ? 'Disabled' : meshrf.frequency }}
+            {{ frequency === undefined ? 'Disabled' : frequency }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -60,23 +60,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
-import useToggleContent from '@/use/toggleContent'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
-import { SettingDialogs } from '@/types'
+import useToggleContent from '@/use/toggleContent'
+import { useMeshrfStore } from '@/stores/MeshrfStore'
 
 export default defineComponent({
   name: 'MeshRfStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const meshrfStore = useMeshrfStore()
+    const { band, ssid, channel, device, chanbw, frequency } = storeToRefs(meshrfStore)
 
-    const { openSettings } = useOpenSettings(SettingDialogs.mesh)
+    const { openSettings } = useOpenSettings(SettingDialogsEnum.mesh)
+
+    onMounted(() => meshrfStore.addMeshrfResource())
+    onUnmounted(() => meshrfStore.removeMeshrfResource())
 
     return {
+      band,
+      ssid,
+      channel,
+      device,
+      chanbw,
+      frequency,
       ...useToggleContent(),
       openSettings,
-      meshrf: nodeStore.meshrf,
     }
   },
 })

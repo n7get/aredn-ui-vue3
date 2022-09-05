@@ -1,23 +1,66 @@
+import { BackendServices } from './../services/BackendServices';
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { useNodeStore } from './NodeStore'
+import { useResourcesStore } from '@/stores/ResourcesStore';
+import { useSysinfoStore } from '@/stores/SysinfoStore'
+import { MockBackendServices } from '@/services/MockBackendServices';
+import { NodeBacnendServices } from '@/services/NodeBacnendServices'
+import { NodeDataEnum } from '@/types';
 
 export const useAppStore = defineStore('AppStore', () => {
-  const nodeStore = useNodeStore()
+  const sysinfoStore = useSysinfoStore()
+  const { getRequiredResources } = useResourcesStore()
 
-  const hasApiMismatch = ref(false)
+  const nodeName = computed(() => sysinfoStore.node || 'localnodde')
   const legacyUrl = ref('')
 
-  const nodeName = computed(() => nodeStore.sysinfo.node)
+  const hasApiMismatch = ref(false)
+
+  const hasError = ref(false)
+  const errorMessage = ref('')
+  function setError(message: string) {
+    errorMessage.value = message
+    hasError.value = true
+  }
+  function clearError() {
+    hasError.value = false
+  }
+
+  const loading = ref(false)
+  function setLoading(value: boolean) {
+    loading.value = value
+  }
 
   function setApiMismatch(value: boolean) {
     hasApiMismatch.value = value
   }
 
+  const mode = import.meta.env.VITE_APP_MODE
+  const backendServices = mode === 'test' ? new MockBackendServices() : new NodeBacnendServices()
+
+  function clearNodeData() {
+    backendServices.clearResources()
+  }
+
+  function loadNodeData() {
+    const requiredResources = getRequiredResources([NodeDataEnum.alerts, NodeDataEnum.sysinfo])
+    const node = sysinfoStore.node || 'localnode'
+
+    backendServices.loadResources(node, requiredResources)
+  }
+
   return {
     hasApiMismatch,
+    hasError,
+    errorMessage,
+    setError,
+    clearError,
+    loading,
+    setLoading,
     legacyUrl,
     nodeName,
     setApiMismatch,
+    clearNodeData,
+    loadNodeData,
   }
 })

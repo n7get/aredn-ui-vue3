@@ -14,9 +14,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
+import { computed, defineComponent, onMounted, onUnmounted } from 'vue'
+import { useAlertStore } from '@/stores/AlertsStore'
 import { useSessionStore } from '@/stores/SessionStore'
+import { storeToRefs } from 'pinia'
 
 export default defineComponent({
   name: 'AlertPanelSemiComponentModel',
@@ -32,29 +33,32 @@ export default defineComponent({
   },
   setup(props) {
     const sessionStore = useSessionStore()
-    const nodeStore = useNodeStore()
+    const alertStore = useAlertStore()
 
-    const alerts = nodeStore.alerts
+    const { alerts } = storeToRefs(alertStore)
     const seenAlerts = sessionStore.seenAlerts
     const setSeenAlert = sessionStore.setSeenAlert
 
     const showAlert = computed((): boolean => {
-      if (alerts[props.type] && seenAlerts[props.type]) {
-        return seenAlerts[props.type] !== alerts[props.type]
+      if (alerts.value[props.type] && seenAlerts[props.type]) {
+        return seenAlerts[props.type] !== alerts.value[props.type]
       }
-      return !!alerts[props.type]
+      return !!alerts.value[props.type]
     })
 
     function clearAlert() {
-      setSeenAlert(props.type, alerts[props.type])
+      setSeenAlert(props.type, alerts.value[props.type])
     }
 
     const message = computed((): string => {
-      if (alerts[props.type]) {
-        return alerts[props.type]
+      if (alerts.value[props.type]) {
+        return alerts.value[props.type]
       }
       return ''
     })
+
+    onMounted(() => alertStore.addAlertsResource())
+    onUnmounted(() => alertStore.removeAlertsResource())
 
     return {
       alerts,

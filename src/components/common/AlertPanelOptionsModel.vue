@@ -16,22 +16,23 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useNodeStore } from '@/stores/NodeStore'
+import { useAlertStore } from '@/stores/AlertsStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 export default defineComponent({
   name: 'AlertPanelOptionsModel',
   setup() {
-    const nodeStore = useNodeStore()
+    const alertStore = useAlertStore()
     const sessionStore = useSessionStore()
 
-    const { alerts } = storeToRefs(nodeStore)
+    const { alerts } = storeToRefs(alertStore)
     const { seenAlerts } = storeToRefs(sessionStore)
 
     const setSeenAlert = sessionStore.setSeenAlert
 
     return {
       alerts,
+      alertStore,
       seenAlerts,
       setSeenAlert,
     }
@@ -64,6 +65,12 @@ export default defineComponent({
       }
       return !!this.alerts[this.type]
     },
+  },
+  mounted() {
+    this.alertStore.addAlertsResource()
+  },
+  unmounted() {
+    this.alertStore.removeAlertsResource()
   },
 })
 </script>

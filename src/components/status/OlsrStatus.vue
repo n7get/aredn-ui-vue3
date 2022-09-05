@@ -25,14 +25,14 @@
             <span class="font-weight-bold">OLSR Entries:</span>
           </v-col>
           <v-col cols="6">
-            {{ olsr.entries }}
+            {{ entries }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">OLSR Nodes:</span>
           </v-col>
           <v-col cols="6">
-            {{ olsr.nodes }}
+            {{ nodes }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -41,18 +41,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import useToggleContent from '@/use/toggleContent'
+import { useOlsrStore } from '@/stores/OlsrStore'
 
 export default defineComponent({
   name: 'OlsrStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const olsrStore = useOlsrStore()
+    const {nodes,entries } = storeToRefs(olsrStore)
+
+    onMounted(() => olsrStore.addOlsrResource())
+    onUnmounted(() => olsrStore.removeOlsrResource())
 
     return {
+      nodes,
+      entries,
       ...useToggleContent(),
-      olsr: nodeStore.olsr,
     }
   },
 })

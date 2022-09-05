@@ -25,28 +25,28 @@
             <span class="font-weight-bold">Uptime:</span>
           </v-col>
           <v-col cols="6">
-            {{ sysinfo.uptime }}
+            {{ uptime }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Load (1m):</span>
           </v-col>
           <v-col cols="6">
-            {{ sysinfo && sysinfo.loads ? sysinfo.loads[0] : 'N/A' }}
+            {{ loads ? loads[0] : 'N/A' }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Load (5m):</span>
           </v-col>
           <v-col cols="6">
-            {{ sysinfo && sysinfo.loads ? sysinfo.loads[1] : 'N/A' }}
+            {{ loads ? loads[1] : 'N/A' }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Load (15m):</span>
           </v-col>
           <v-col cols="6">
-            {{ sysinfo && sysinfo.loads ? sysinfo.loads[2] : 'N/A' }}
+            {{ loads ? loads[2] : 'N/A' }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -55,18 +55,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import useToggleContent from '@/use/toggleContent'
+import { useSysinfoStore } from '@/stores/SysinfoStore'
 
 export default defineComponent({
   name: 'PerformanceStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const sysinfoStore = useSysinfoStore()
+      const { uptime, loads } = storeToRefs(sysinfoStore)
 
+    onMounted(() => sysinfoStore.addSysinfoResource())
+    onUnmounted(() => sysinfoStore.removeSysinfoResource())
+    
     return {
+      uptime,
+      loads,
       ...useToggleContent(),
-      sysinfo: nodeStore.sysinfo,
     }
   },
 })

@@ -5,7 +5,7 @@
         <h2>Error</h2>
       </v-card-title>
       <v-card-text>
-        An error has occured: <b>{{ errorString }}</b>
+        An error has occured: <b>{{ errorMessage }}</b>
       </v-card-text>
       <v-card-actions>
         <v-spacer />
@@ -17,15 +17,21 @@
 
 <script lang="ts">
 //import { mapActions, mapGetters } from "vuex"
+import { useAppStore } from "@/stores/AppStore";
+import { storeToRefs } from "pinia";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "error",
-  methods: {
-    ...mapActions(["clearError"]),
+  name: "ErrorPopup",
+  setup() {
+    const appstore = useAppStore()
+    const { hasError, errorMessage } = storeToRefs(appstore)
+
+    return {
+      hasError,
+      errorMessage,
+      clearError: appstore.clearError,
+    }
   },
-  computed: {
-    ...mapGetters(["errorString", "hasError", "nodeName"]),
-  },
-}
+})
 </script>

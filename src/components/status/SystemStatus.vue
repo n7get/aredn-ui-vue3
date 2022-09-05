@@ -38,7 +38,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.description === undefined ? 'N/A' : sysinfo.description
+              description === undefined ? 'N/A' : description
             }}
           </v-col>
 
@@ -53,7 +53,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{ sysinfo.date }} {{ sysinfo.time }}
+            {{ date }} {{ time }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -67,7 +67,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{ sysinfo.model === undefined ? 'N/A' : sysinfo.model }}
+            {{ model === undefined ? 'N/A' : model }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -82,7 +82,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.target_type === undefined ? 'N/A' : sysinfo.target_type
+              target_type === undefined ? 'N/A' : target_type
             }}
           </v-col>
 
@@ -98,9 +98,9 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.firmware_version === undefined
+              firmware_version === undefined
                 ? 'N/A'
-                : sysinfo.firmware_version
+                : firmware_version
             }}
           </v-col>
 
@@ -116,7 +116,7 @@
             class="pt-0 pt-sm-3"
           >
             {{
-              sysinfo.api_version === undefined ? 'N/A' : sysinfo.api_version
+              api_version === undefined ? 'N/A' : api_version
             }}
           </v-col>
         </v-row>
@@ -126,23 +126,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
-import useToggleContent from '@/use/toggleContent'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
-import { SettingDialogs } from '@/types'
+import useToggleContent from '@/use/toggleContent'
+import { useSysinfoStore } from '@/stores/SysinfoStore'
 
 export default defineComponent({
   name: 'SystemStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const sysinfoStore = useSysinfoStore()
+      const {
+        description,
+        date,
+        api_version,
+        target_type,
+        time,
+        model,
+        firmware_version 
+      } = storeToRefs(sysinfoStore)
 
-    const { openSettings } = useOpenSettings(SettingDialogs.system)
+    const { openSettings } = useOpenSettings(SettingDialogsEnum.system)
+
+    onMounted(() => sysinfoStore.addSysinfoResource())
+    onUnmounted(() => sysinfoStore.removeSysinfoResource())
 
     return {
+      description,
+      date,
+      api_version,
+      target_type,
+      time,
+      model,
+      firmware_version,
       ...useToggleContent(),
       openSettings,
-      sysinfo: nodeStore.sysinfo,
     }
   },
 })

@@ -1,4 +1,4 @@
-<template>
+SettingDialogsEnum<template>
   <v-dialog v-model="showDialog" max-width="400">
     <v-card>
       <v-card-title>
@@ -16,14 +16,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { SettingDialogs } from '@/types'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
 
 export default defineComponent({
   name: 'IpAddressesSettings',
   setup() {
     const { closeSettings, onOpenSettings, showDialog } = useOpenSettings(
-      SettingDialogs.ipaddresses
+      SettingDialogsEnum.ipaddresses
     )
 
     function cancel() {

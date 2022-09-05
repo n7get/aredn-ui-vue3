@@ -24,26 +24,26 @@
           <v-col cols="6">
             <span class="font-weight-bold">Total space in /:</span>
           </v-col>
-          <v-col cols="6"> {{ storage.roottotal }} KB </v-col>
+          <v-col cols="6"> {{ roottotal }} KB </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Freespace in /:</span>
           </v-col>
           <v-col cols="6">
-            {{ storage.rootfree }} KB
+            {{ rootfree }} KB
             <v-progress-linear v-model="rootpctfree" />
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Total space in /tmp:</span>
           </v-col>
-          <v-col cols="6"> {{ storage.tmptotal }} KB </v-col>
+          <v-col cols="6"> {{ tmptotal }} KB </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Freespace in /tmp:</span>
           </v-col>
           <v-col cols="6">
-            {{ storage.tmpfree }} KB
+            {{ tmpfree }} KB
             <v-progress-linear v-model="tmppctfree" />
           </v-col>
         </v-row>
@@ -53,30 +53,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { computed } from '@vue/reactivity'
-import { useNodeStore } from '@/stores/NodeStore'
+import { computed,  defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import useToggleContent from '@/use/toggleContent'
+import { useStorageStore } from '@/stores/StorageStore'
 
 export default defineComponent({
   name: 'FilesystemStatus',
   setup() {
-    const nodeStore = useNodeStore()
-    const storage = nodeStore.storage
+    const storageStore = useStorageStore()
+    const { rootfree, tmptotal, roottotal, tmpfree } = storeToRefs(storageStore)
 
     const rootpctfree = computed(() => {
-      // eslint-disable-next-line prettier/prettier
-      return ((storage.rootfree / storage.roottotal) * 100).toFixed(3)
+      return ((rootfree.value / roottotal.value) * 100).toFixed(3)
     })
     const tmppctfree = computed(() => {
-      return ((storage.tmpfree / storage.tmptotal) * 100).toFixed(3)
+      return ((tmpfree.value / tmptotal.value) * 100).toFixed(3)
     })
 
+    onMounted(() => storageStore.addStorageResource())
+    onUnmounted(() => storageStore.removeStorageResource())
+
     return {
+      rootfree,
+      tmptotal,
+      roottotal,
+      tmpfree,
       ...useToggleContent(),
       rootpctfree,
       tmppctfree,
-      storage,
     }
   },
 })

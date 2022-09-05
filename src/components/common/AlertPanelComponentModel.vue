@@ -14,9 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed, defineProps, onMounted, onUnmounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useNodeStore } from '@/stores/NodeStore'
+import { useAlertStore } from '@/stores/AlertsStore'
 import { useSessionStore } from '@/stores/SessionStore'
 
 const props = defineProps<{
@@ -25,9 +25,9 @@ const props = defineProps<{
 }>()
 
 const sessionStore = useSessionStore()
-const nodeStore = useNodeStore()
+const alertStore = useAlertStore()
 
-const { alerts } = storeToRefs(nodeStore)
+const { alerts } = storeToRefs(alertStore)
 const { seenAlerts } = storeToRefs(sessionStore)
 const setSeenAlert = sessionStore.setSeenAlert
 
@@ -48,4 +48,7 @@ const message = computed((): string => {
   }
   return ''
 })
+
+onMounted(() => alertStore.addAlertsResource())
+onUnmounted(() => alertStore.removeAlertsResource())
 </script>

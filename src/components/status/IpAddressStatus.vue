@@ -30,28 +30,28 @@
             <span class="font-weight-bold">RF:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.wifi === '' ? 'Disabled' : ip.wifi }}
+            {{ wifi === '' ? 'Disabled' : wifi }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">LAN:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.lan }}
+            {{ lan }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">WAN:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.wan === '' ? 'n/a' : ip.wan }}
+            {{ wan === '' ? 'n/a' : wan }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Gateway:</span>
           </v-col>
           <v-col cols="6">
-            {{ ip.gateway }}
+            {{ gateway }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -60,23 +60,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
-import useToggleContent from '@/use/toggleContent'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
-import { SettingDialogs } from '@/types'
+import useToggleContent from '@/use/toggleContent'
+import { useIpStore } from '@/stores/IpStore'
 
 export default defineComponent({
   name: 'IpAddressStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const ipStore = useIpStore()
+    const { wifi, wan, gateway, lan } = storeToRefs(ipStore)
 
-    const { openSettings } = useOpenSettings(SettingDialogs.ipaddresses)
+    const { openSettings } = useOpenSettings(SettingDialogsEnum.ipaddresses)
+
+    onMounted(() => ipStore.addIpResource())
+    onUnmounted(() => ipStore.removeIpResource())
 
     return {
+      wifi,
+      wan,
+      gateway,
+      lan,
       ...useToggleContent(),
       openSettings,
-      ip: nodeStore.ip,
     }
   },
 })

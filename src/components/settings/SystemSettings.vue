@@ -16,14 +16,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { SettingDialogs } from '@/types'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
 
 export default defineComponent({
   name: 'SystemSettings',
   setup() {
     const { closeSettings, onOpenSettings, showDialog } = useOpenSettings(
-      SettingDialogs.system
+      SettingDialogsEnum.system
     )
 
     function cancel() {

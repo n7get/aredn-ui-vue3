@@ -30,21 +30,21 @@
             <span class="font-weight-bold">Latitude:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.lat === '' ? 'Not set' : location.lat }}
+            {{ lat === '' ? 'Not set' : lat }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Longitude:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.lon === '' ? 'Not set' : location.lon }}
+            {{ lon === '' ? 'Not set' : lon }}
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Grid Square:</span>
           </v-col>
           <v-col cols="6">
-            {{ location.gridsquare === '' ? 'Not set' : location.gridsquare }}
+            {{ gridsquare === '' ? 'Not set' : gridsquare }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -53,23 +53,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useNodeStore } from '@/stores/NodeStore'
-import useToggleContent from '@/use/toggleContent'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { SettingDialogsEnum } from '@/types'
 import useOpenSettings from '@/use/openSettings'
-import { SettingDialogs } from '@/types'
+import useToggleContent from '@/use/toggleContent'
+import { useLocationStore } from '@/stores/LocationStore'
 
 export default defineComponent({
   name: 'LocationStatus',
   setup() {
-    const nodeStore = useNodeStore()
+    const locationStore = useLocationStore()
+    const {lon, lat, gridsquare } = storeToRefs(locationStore)
 
-    const { openSettings } = useOpenSettings(SettingDialogs.location)
+    const { openSettings } = useOpenSettings(SettingDialogsEnum.location)
+
+    onMounted(() => locationStore.addLocationResource())
+    onUnmounted(() => locationStore.removeLocationResource())
 
     return {
+      lon,
+      lat,
+      gridsquare,
       ...useToggleContent(),
       openSettings,
-      location: nodeStore.location,
     }
   },
 })

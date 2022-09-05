@@ -14,13 +14,17 @@
 </template>
 
 <script lang="ts">
-//import { mapGetters } from "vuex"
+import { useAppStore } from "@/stores/AppStore";
+import { storeToRefs } from "pinia";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "loader",
-  computed: {
-    ...mapGetters(["loading"]),
-  },
-}
+  name: "LoadingPopup",
+  setup() {
+    const appStore = useAppStore()
+    const { loading } = storeToRefs(appStore)
+
+    return { loading }
+  }
+})
 </script>

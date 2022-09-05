@@ -24,25 +24,25 @@
           <v-col cols="6">
             <span class="font-weight-bold">Total RAM:</span>
           </v-col>
-          <v-col cols="6"> {{ memory.totalram }} KB </v-col>
+          <v-col cols="6"> {{ totalram }} KB </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Free RAM:</span>
           </v-col>
           <v-col cols="6">
-            {{ memory.freeram }} KB
+            {{ freeram }} KB
             <v-progress-linear v-model="freerampctfree" />
           </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Shared RAM:</span>
           </v-col>
-          <v-col cols="6"> {{ memory.sharedram }} KB </v-col>
+          <v-col cols="6"> {{ sharedram }} KB </v-col>
 
           <v-col cols="6">
             <span class="font-weight-bold">Buffer RAM:</span>
           </v-col>
-          <v-col cols="6"> {{ memory.bufferram }} KB </v-col>
+          <v-col cols="6"> {{ bufferram }} KB </v-col>
         </v-row>
       </v-card-text>
     </v-slide-y-transition>
@@ -50,25 +50,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { computed } from '@vue/reactivity'
-import { useNodeStore } from '@/stores/NodeStore'
+import { computed,  defineComponent, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import useToggleContent from '@/use/toggleContent'
+import { useMemoryStore } from '@/stores/MemoryStore'
 
 export default defineComponent({
   name: 'MemoryStatus',
   setup() {
-    const nodeStore = useNodeStore()
-    const memory = nodeStore.memory
+    const memoryStore = useMemoryStore()
+    const { freeram, totalram, sharedram, bufferram } = storeToRefs(memoryStore)
 
     const freerampctfree = computed(() => {
-      return ((memory.freeram / memory.totalram) * 100).toFixed(3)
+      return ((freeram.value / totalram.value) * 100).toFixed(3)
     })
 
+    onMounted(() => memoryStore.addMemoryResource())
+    onUnmounted(() => memoryStore.removeMemoryResource())
+
     return {
+      freeram,
+      totalram,
+      sharedram,
+      bufferram,
       ...useToggleContent(),
       freerampctfree,
-      memory,
     }
   },
 })
