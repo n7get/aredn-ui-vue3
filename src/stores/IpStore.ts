@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Iip } from '@/models/Iip'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Iip } from '@/models/Iip'
 
 export const useIpStore = defineStore('IpStore', () => {
   const wifi = ref('')

@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Isysinfo } from '@/models/Isysinfo'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Isysinfo } from '@/models/Isysinfo'
 
 function initStore() {
   return {

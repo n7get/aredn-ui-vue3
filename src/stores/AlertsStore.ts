@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Ialerts } from '@/models/Ialert'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Ialerts } from '@/models/Ialert'
 
 export const useAlertStore = defineStore('AlertsStore', () => {
   const alerts = ref<Ialerts>({})

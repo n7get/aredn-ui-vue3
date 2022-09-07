@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Ilocation } from '@/models/Ilocation'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Ilocation } from '@/models/Ilocation'
 
 export const useLocationStore = defineStore('LocationStore', () => {
   const lon = ref('')

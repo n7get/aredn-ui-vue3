@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Imemory } from '@/models/Imemory'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Imemory } from '@/models/Imemory'
 
 export const useMemoryStore = defineStore('MemoryStore', () => {
   const freeram = ref(0)

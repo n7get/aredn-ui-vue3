@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Istorage } from '@/models/Istorage'
+import { defineStore } from 'pinia'
 import { useResourcesStore } from '@/stores/ResourcesStore'
 import { NodeDataEnum } from '@/types'
+import { Istorage } from '@/models/Istorage'
 
 export const useStorageStore = defineStore('StorageStore', () => {
   const rootfree = ref(0)
