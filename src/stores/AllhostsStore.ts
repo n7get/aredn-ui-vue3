@@ -42,7 +42,6 @@ export const useAllhostsStore = defineStore('AllhostsStore', () => {
     setValue,
     clearValue,
     addAllhostsResource,
-    resourcesStore,
+    removeAllhostsResource,
   }
-  function removeAllhostsResource() {}
 })

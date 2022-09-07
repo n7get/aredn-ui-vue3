@@ -1,6 +1,7 @@
 import { NodeDataEnum } from '@/types'
 
 import { Ialerts } from '@/models/Ialert'
+import { Iallhost } from '@/models/Iallhosts'
 import { Icurrentneighbors } from '@/models/Icurrentneighbors'
 import { Ifreqlist } from '@/models/Ifreqlist'
 import { Iip } from '@/models/Iip'
@@ -16,6 +17,7 @@ import { Isysinfo } from '@/models/Isysinfo'
 import { Itopology } from './../models/Itopology'
 
 import { useAlertStore } from '@/stores/AlertsStore'
+import { useAllhostsStore } from '@/stores/AllhostsStore'
 import { useCurrentneighborsStore } from './../stores/CurrentneighborsStore'
 import { useFreqlistStore } from './../stores/FreqlistStore'
 import { useIpStore } from '@/stores/IpStore'
@@ -33,6 +35,7 @@ import { useTopologyStore } from '@/stores/TopologyStore'
 
 export class DataHelperServices {
   private alertStore = useAlertStore()
+  private allhostsStore = useAllhostsStore()
   private currentneighborsStore = useCurrentneighborsStore()
   private freqlistStore = useFreqlistStore()
   private ipStore = useIpStore()
@@ -50,6 +53,7 @@ export class DataHelperServices {
 
   clearResources() {
     this.alertStore.clearValue()
+    this.allhostsStore.clearValue()
     this.currentneighborsStore.clearValue()
     this.freqlistStore.clearValue()
     this.ipStore.clearValue()
@@ -70,6 +74,10 @@ export class DataHelperServices {
     switch (resource) {
       case NodeDataEnum.alerts:
         this.alertStore.setValue(value as Ialerts)
+        break
+
+      case NodeDataEnum.allhosts:
+        this.allhostsStore.setValue(value as Iallhost[])
         break
 
       case NodeDataEnum.currentneighbors:

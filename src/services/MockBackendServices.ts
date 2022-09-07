@@ -3,7 +3,7 @@ import { NodeDataEnum } from '@/types'
 import { DataHelperServices } from '@/services/DataHelperServices'
 
 import alertsJson from '@/data/alerts.json'
-// import allhostsJson from '@/data/allhosts.json'
+import allhostsJson from '@/data/allhosts.json'
 // import bynodeJson from "@/data/bynode.json";
 // import byserviceJson from "@/data/byservice.json";
 import currentneighborsJson from '@/data/currentneighbors.json'
@@ -32,92 +32,67 @@ export class MockBackendServices implements BackendServices {
     requiredResources.forEach((resource) => {
       switch (resource) {
         case NodeDataEnum.alerts:
-          this.dataHelperServices.saveResources(NodeDataEnum.alerts, alertsJson)
+          this.dataHelperServices.saveResources(resource, alertsJson)
+          break
+
+        case NodeDataEnum.allhosts:
+          this.dataHelperServices.saveResources(resource, allhostsJson)
           break
 
         case NodeDataEnum.currentneighbors:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.currentneighbors,
-            currentneighborsJson
-          )
+          this.dataHelperServices.saveResources(resource, currentneighborsJson)
           break
 
         case NodeDataEnum.freqlist:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.freqlist,
-            freqlistJson
-          )
+          this.dataHelperServices.saveResources(resource, freqlistJson)
           break
 
         case NodeDataEnum.ip:
-          this.dataHelperServices.saveResources(NodeDataEnum.ip, ipJson)
+          this.dataHelperServices.saveResources(resource, ipJson)
           break
 
         case NodeDataEnum.localhosts:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.localhosts,
-            localhostsJson
-          )
+          this.dataHelperServices.saveResources(resource, localhostsJson)
           break
+
         case NodeDataEnum.location:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.location,
-            locationJson
-          )
+          this.dataHelperServices.saveResources(resource, locationJson)
           break
 
         case NodeDataEnum.memory:
-          this.dataHelperServices.saveResources(NodeDataEnum.memory, memoryJson)
+          this.dataHelperServices.saveResources(resource, memoryJson)
           break
 
         case NodeDataEnum.meshrf:
-          this.dataHelperServices.saveResources(NodeDataEnum.meshrf, meshrfJson)
+          this.dataHelperServices.saveResources(resource, meshrfJson)
           break
 
         case NodeDataEnum.olsr:
-          this.dataHelperServices.saveResources(NodeDataEnum.olsr, olsrJson)
+          this.dataHelperServices.saveResources(resource, olsrJson)
           break
 
         case NodeDataEnum.previousneighbors:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.previousneighbors,
-            previousneighborsJson
-          )
+          this.dataHelperServices.saveResources(resource, previousneighborsJson)
           break
 
         case NodeDataEnum.remotenodes:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.remotenodes,
-            remotenodesJson
-          )
+          this.dataHelperServices.saveResources(resource, remotenodesJson)
           break
 
         case NodeDataEnum.services:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.services,
-            servicesJson
-          )
+          this.dataHelperServices.saveResources(resource, servicesJson)
           break
 
         case NodeDataEnum.storage:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.storage,
-            storageJson
-          )
+          this.dataHelperServices.saveResources(resource, storageJson)
           break
 
         case NodeDataEnum.sysinfo:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.sysinfo,
-            sysinfoJson
-          )
+          this.dataHelperServices.saveResources(resource, sysinfoJson)
           break
 
         case NodeDataEnum.topology:
-          this.dataHelperServices.saveResources(
-            NodeDataEnum.topology,
-            topologyJson
-          )
+          this.dataHelperServices.saveResources(resource, topologyJson)
           break
       }
     })
