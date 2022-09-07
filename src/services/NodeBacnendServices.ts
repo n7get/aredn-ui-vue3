@@ -39,7 +39,7 @@ interface ApiData {
         // api_version, pages
         [key: string]: {
           // chart?, common, mesh, status
-          [key: string]: Object
+          [key: string]: unknown
         }
       }
 }
@@ -90,7 +90,7 @@ export class NodeBacnendServices implements BackendServices {
 
           Object.entries(v).forEach((x) => {
             const r = NodeDataEnumUrils.fromString(x[0])
-            this.dataHelperServices.saveResources(r, x[1] as Object)
+            this.dataHelperServices.saveResources(r, x[1] as unknown)
           })
         })
       })

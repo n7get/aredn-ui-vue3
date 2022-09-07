@@ -70,7 +70,7 @@ export class DataHelperServices {
     this.topologyStore.clearValue()
   }
 
-  saveResources(resource: NodeDataEnum, value: Object) {
+  saveResources(resource: NodeDataEnum, value: unknown) {
     switch (resource) {
       case NodeDataEnum.alerts:
         this.alertStore.setValue(value as Ialerts)
