@@ -1,11 +1,11 @@
-import { BackendServices } from './../services/BackendServices';
+import { BackendServices } from './../services/BackendServices'
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { useResourcesStore } from '@/stores/ResourcesStore';
+import { useResourcesStore } from '@/stores/ResourcesStore'
 import { useSysinfoStore } from '@/stores/SysinfoStore'
-import { MockBackendServices } from '@/services/MockBackendServices';
+import { MockBackendServices } from '@/services/MockBackendServices'
 import { NodeBacnendServices } from '@/services/NodeBacnendServices'
-import { NodeDataEnum } from '@/types';
+import { NodeDataEnum } from '@/types'
 
 export const useAppStore = defineStore('AppStore', () => {
   const sysinfoStore = useSysinfoStore()
@@ -36,14 +36,18 @@ export const useAppStore = defineStore('AppStore', () => {
   }
 
   const mode = import.meta.env.VITE_APP_MODE
-  const backendServices = mode === 'test' ? new MockBackendServices() : new NodeBacnendServices()
+  const backendServices =
+    mode === 'test' ? new MockBackendServices() : new NodeBacnendServices()
 
   function clearNodeData() {
     backendServices.clearResources()
   }
 
   function loadNodeData() {
-    const requiredResources = getRequiredResources([NodeDataEnum.alerts, NodeDataEnum.sysinfo])
+    const requiredResources = getRequiredResources([
+      NodeDataEnum.alerts,
+      NodeDataEnum.sysinfo,
+    ])
     const node = sysinfoStore.node || 'localnode'
 
     backendServices.loadResources(node, requiredResources)

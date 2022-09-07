@@ -1,35 +1,35 @@
 import { NodeDataEnum } from '@/types'
 
-import { Ialerts } from '@/models/Ialert';
-import { Icurrentneighbors } from '@/models/Icurrentneighbors';
-import { Ifreqlist } from '@/models/Ifreqlist';
-import { Iip } from '@/models/Iip';
-import { Ilocalhost } from './../models/Ilocalhost';
-import { Ilocation } from '@/models/Ilocation';
-import { Imemory } from '@/models/Imemory';
-import { Imeshrf } from '@/models/Imeshrf';
-import { Iolsr } from '@/models/Iolsr';
-import { Iremotenode } from './../models/Iremotenode';
-import { Iservice } from './../models/Iservice';
-import { Istorage } from '@/models/Istorage';
-import { Isysinfo } from '@/models/Isysinfo';
-import { Itopology } from './../models/Itopology';
+import { Ialerts } from '@/models/Ialert'
+import { Icurrentneighbors } from '@/models/Icurrentneighbors'
+import { Ifreqlist } from '@/models/Ifreqlist'
+import { Iip } from '@/models/Iip'
+import { Ilocalhost } from './../models/Ilocalhost'
+import { Ilocation } from '@/models/Ilocation'
+import { Imemory } from '@/models/Imemory'
+import { Imeshrf } from '@/models/Imeshrf'
+import { Iolsr } from '@/models/Iolsr'
+import { Iremotenode } from './../models/Iremotenode'
+import { Iservice } from './../models/Iservice'
+import { Istorage } from '@/models/Istorage'
+import { Isysinfo } from '@/models/Isysinfo'
+import { Itopology } from './../models/Itopology'
 
 import { useAlertStore } from '@/stores/AlertsStore'
-import { useCurrentneighborsStore } from './../stores/CurrentneighborsStore';
-import { useFreqlistStore } from './../stores/FreqlistStore';
+import { useCurrentneighborsStore } from './../stores/CurrentneighborsStore'
+import { useFreqlistStore } from './../stores/FreqlistStore'
 import { useIpStore } from '@/stores/IpStore'
-import { useLocalhostsStore } from './../stores/LocalhostsStore';
+import { useLocalhostsStore } from './../stores/LocalhostsStore'
 import { useLocationStore } from '@/stores/LocationStore'
 import { useMemoryStore } from '@/stores/MemoryStore'
 import { useMeshrfStore } from '@/stores/MeshrfStore'
 import { useOlsrStore } from '@/stores/OlsrStore'
-import { usePreviousneighborsStore } from './../stores/PreviousneighborsStore';
-import { useRemotenodesStore } from './../stores/RemotenodesStore';
-import { useServicesStore } from './../stores/ServicesStore';
+import { usePreviousneighborsStore } from './../stores/PreviousneighborsStore'
+import { useRemotenodesStore } from './../stores/RemotenodesStore'
+import { useServicesStore } from './../stores/ServicesStore'
 import { useStorageStore } from '@/stores/StorageStore'
 import { useSysinfoStore } from '@/stores/SysinfoStore'
-import { useTopologyStore } from '@/stores/TopologyStore';
+import { useTopologyStore } from '@/stores/TopologyStore'
 
 export class DataHelperServices {
   private alertStore = useAlertStore()
@@ -47,7 +47,7 @@ export class DataHelperServices {
   private storageStore = useStorageStore()
   private sysinfoStore = useSysinfoStore()
   private topologyStore = useTopologyStore()
-  
+
   clearResources() {
     this.alertStore.clearValue()
     this.currentneighborsStore.clearValue()

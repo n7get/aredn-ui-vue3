@@ -14,17 +14,17 @@
 </template>
 
 <script lang="ts">
-import { useAppStore } from "@/stores/AppStore";
-import { storeToRefs } from "pinia";
-import { defineComponent } from "vue";
+import { useAppStore } from '@/stores/AppStore'
+import { storeToRefs } from 'pinia'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "LoadingPopup",
+  name: 'LoadingPopup',
   setup() {
     const appStore = useAppStore()
     const { loading } = storeToRefs(appStore)
 
     return { loading }
-  }
+  },
 })
 </script>

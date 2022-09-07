@@ -1,8 +1,8 @@
-import { ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Ifreqlist } from './../models/Ifreqlist';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Ifreqlist } from './../models/Ifreqlist'
 
 export const useFreqlistStore = defineStore('FreqlistStore', () => {
   const freqlist = ref<Ifreqlist[]>([])

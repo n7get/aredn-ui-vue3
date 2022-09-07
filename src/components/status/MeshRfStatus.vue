@@ -71,7 +71,8 @@ export default defineComponent({
   name: 'MeshRfStatus',
   setup() {
     const meshrfStore = useMeshrfStore()
-    const { band, ssid, channel, device, chanbw, frequency } = storeToRefs(meshrfStore)
+    const { band, ssid, channel, device, chanbw, frequency } =
+      storeToRefs(meshrfStore)
 
     const { openSettings } = useOpenSettings(SettingDialogsEnum.mesh)
 

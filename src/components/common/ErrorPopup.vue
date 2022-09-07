@@ -17,12 +17,12 @@
 
 <script lang="ts">
 //import { mapActions, mapGetters } from "vuex"
-import { useAppStore } from "@/stores/AppStore";
-import { storeToRefs } from "pinia";
-import { defineComponent } from "vue";
+import { useAppStore } from '@/stores/AppStore'
+import { storeToRefs } from 'pinia'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "ErrorPopup",
+  name: 'ErrorPopup',
   setup() {
     const appstore = useAppStore()
     const { hasError, errorMessage } = storeToRefs(appstore)

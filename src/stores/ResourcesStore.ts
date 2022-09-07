@@ -18,7 +18,7 @@ export const useResourcesStore = defineStore('ResourcesStore', () => {
     if (count === 0) {
       throw new Error(`reference count for ${resourceName} is 0`)
     }
-    
+
     requriedResources.set(resourceName, count - 1)
   }
 
@@ -27,7 +27,7 @@ export const useResourcesStore = defineStore('ResourcesStore', () => {
       .filter((rr) => rr[1] != 0)
       .map((rr) => rr[0])
 
-    globalResources.forEach( r => {
+    globalResources.forEach((r) => {
       if (!result.find((rr) => r === rr)) {
         result.push(r)
       }

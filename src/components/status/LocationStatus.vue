@@ -64,7 +64,7 @@ export default defineComponent({
   name: 'LocationStatus',
   setup() {
     const locationStore = useLocationStore()
-    const {lon, lat, gridsquare } = storeToRefs(locationStore)
+    const { lon, lat, gridsquare } = storeToRefs(locationStore)
 
     const { openSettings } = useOpenSettings(SettingDialogsEnum.location)
 

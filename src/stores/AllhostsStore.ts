@@ -1,8 +1,8 @@
-import { computed, ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Iallhost } from '@/models/Iallhosts';
+import { computed, ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Iallhost } from '@/models/Iallhosts'
 
 export const useAllhostsStore = defineStore('AllhostsStore', () => {
   const allhostsByIp = ref<Map<string, string>>(new Map())
@@ -44,6 +44,5 @@ export const useAllhostsStore = defineStore('AllhostsStore', () => {
     addAllhostsResource,
     resourcesStore,
   }
-  function removeAllhostsResource() {
-  }
+  function removeAllhostsResource() {}
 })

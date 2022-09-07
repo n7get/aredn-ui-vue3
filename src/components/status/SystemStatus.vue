@@ -37,9 +37,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{
-              description === undefined ? 'N/A' : description
-            }}
+            {{ description === undefined ? 'N/A' : description }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -81,9 +79,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{
-              target_type === undefined ? 'N/A' : target_type
-            }}
+            {{ target_type === undefined ? 'N/A' : target_type }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -97,11 +93,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{
-              firmware_version === undefined
-                ? 'N/A'
-                : firmware_version
-            }}
+            {{ firmware_version === undefined ? 'N/A' : firmware_version }}
           </v-col>
 
           <v-col cols="12" sm="3" md="2" class="pb-0 pb-sm-3">
@@ -115,9 +107,7 @@
             md="4"
             class="pt-0 pt-sm-3"
           >
-            {{
-              api_version === undefined ? 'N/A' : api_version
-            }}
+            {{ api_version === undefined ? 'N/A' : api_version }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -137,15 +127,15 @@ export default defineComponent({
   name: 'SystemStatus',
   setup() {
     const sysinfoStore = useSysinfoStore()
-      const {
-        description,
-        date,
-        api_version,
-        target_type,
-        time,
-        model,
-        firmware_version 
-      } = storeToRefs(sysinfoStore)
+    const {
+      description,
+      date,
+      api_version,
+      target_type,
+      time,
+      model,
+      firmware_version,
+    } = storeToRefs(sysinfoStore)
 
     const { openSettings } = useOpenSettings(SettingDialogsEnum.system)
 

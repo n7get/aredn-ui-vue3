@@ -1,8 +1,8 @@
-import { ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Iremotenode } from './../models/Iremotenode';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Iremotenode } from './../models/Iremotenode'
 
 export const useRemotenodesStore = defineStore('RemotenodesStore', () => {
   const remotenodes = ref<Iremotenode[]>([])
@@ -35,4 +35,3 @@ export const useRemotenodesStore = defineStore('RemotenodesStore', () => {
     removeRemotenodesResource,
   }
 })
-

@@ -1,8 +1,8 @@
-import { ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Ilocalhost } from './../models/Ilocalhost';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Ilocalhost } from './../models/Ilocalhost'
 
 export const useLocalhostsStore = defineStore('LocalhostsStore', () => {
   const localhosts = ref<Ilocalhost[]>([])
@@ -35,4 +35,3 @@ export const useLocalhostsStore = defineStore('LocalhostsStore', () => {
     removeLocalhostsResource,
   }
 })
-

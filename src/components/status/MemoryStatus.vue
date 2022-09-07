@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { computed,  defineComponent, onMounted, onUnmounted } from 'vue'
+import { computed, defineComponent, onMounted, onUnmounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import useToggleContent from '@/use/toggleContent'
 import { useMemoryStore } from '@/stores/MemoryStore'

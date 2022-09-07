@@ -1,8 +1,8 @@
-import { ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Itopology } from './../models/Itopology';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Itopology } from './../models/Itopology'
 
 export const useTopologyStore = defineStore('TopologyStore', () => {
   const topology = ref<Itopology>()
@@ -33,4 +33,3 @@ export const useTopologyStore = defineStore('TopologyStore', () => {
     removeTopologyResource,
   }
 })
-

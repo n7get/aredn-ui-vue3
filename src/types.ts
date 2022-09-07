@@ -23,4 +23,3 @@ export enum NodeDataEnum {
   sysinfo = 'sysinfo',
   topology = 'topology',
 }
-

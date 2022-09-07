@@ -1,8 +1,8 @@
-import { ref } from 'vue';
-import { defineStore } from "pinia";
-import { NodeDataEnum } from '@/types';
-import { useResourcesStore } from './ResourcesStore';
-import { Iservice } from './../models/Iservice';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { NodeDataEnum } from '@/types'
+import { useResourcesStore } from './ResourcesStore'
+import { Iservice } from './../models/Iservice'
 
 export const useServicesStore = defineStore('ServicesStore', () => {
   const services = ref<Iservice[]>([])
@@ -35,4 +35,3 @@ export const useServicesStore = defineStore('ServicesStore', () => {
     removeServicesResource,
   }
 })
-

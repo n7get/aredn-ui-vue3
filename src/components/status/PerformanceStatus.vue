@@ -64,11 +64,11 @@ export default defineComponent({
   name: 'PerformanceStatus',
   setup() {
     const sysinfoStore = useSysinfoStore()
-      const { uptime, loads } = storeToRefs(sysinfoStore)
+    const { uptime, loads } = storeToRefs(sysinfoStore)
 
     onMounted(() => sysinfoStore.addSysinfoResource())
     onUnmounted(() => sysinfoStore.removeSysinfoResource())
-    
+
     return {
       uptime,
       loads,

@@ -38,5 +38,5 @@ import OlsrStatus from '@/components/status/OlsrStatus.vue'
 import PerformanceStatus from '@/components/status/PerformanceStatus.vue'
 import SystemStatus from '@/components/status/SystemStatus.vue'
 
-onMounted(() =>useAppStore().loadNodeData())
+onMounted(() => useAppStore().loadNodeData())
 </script>

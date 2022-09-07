@@ -1,4 +1,4 @@
-SettingDialogsEnum<template>
+<template>
   <v-dialog v-model="showDialog" max-width="400">
     <v-card>
       <v-card-title>

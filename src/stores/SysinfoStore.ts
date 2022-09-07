@@ -16,7 +16,7 @@ function initStore() {
     uptime: '',
     loads: [],
     node: '',
-    firmware_version: ''
+    firmware_version: '',
   }
 }
 export const useSysinfoStore = defineStore('SysinfoStore', () => {

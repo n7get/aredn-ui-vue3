@@ -50,7 +50,7 @@ export default defineComponent({
   name: 'OlsrStatus',
   setup() {
     const olsrStore = useOlsrStore()
-    const {nodes,entries } = storeToRefs(olsrStore)
+    const { nodes, entries } = storeToRefs(olsrStore)
 
     onMounted(() => olsrStore.addOlsrResource())
     onUnmounted(() => olsrStore.removeOlsrResource())
